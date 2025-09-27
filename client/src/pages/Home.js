@@ -1,4 +1,4 @@
-import React from 'rea    <div className="p-4 md:p-6 max-w-4xl mx-auto">t';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useProfile } from '../context/ProfileContext';
 import CodeBlock from '../components/CodeBlock';
