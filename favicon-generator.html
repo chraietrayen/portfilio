@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        canvas { border: 1px solid #ccc; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Favicon Generator</h2>
+    <canvas id="faviconCanvas" width="32" height="32"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('faviconCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // VS Code themed favicon
+        ctx.fillStyle = '#1e1e1e'; // VS Code dark background
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // Add "RC" letters for Rayen Chraiet
+        ctx.fillStyle = '#007acc'; // VS Code blue
+        ctx.font = 'bold 16px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('RC', 16, 22);
+        
+        // Convert to downloadable icon
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.download = 'favicon.ico';
+            link.href = canvas.toDataURL();
+            document.body.appendChild(link);
+            link.click();
+        }, 1000);
+    </script>
+    
+    <p>A favicon with your initials "RC" in VS Code theme will be generated!</p>
+</body>
+</html>
