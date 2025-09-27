@@ -110,6 +110,41 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .code-block {
-    @apply text-xs p-3;
+    @apply text-xs p-2;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+  
+  .card {
+    @apply p-4;
+  }
+  
+  /* Mobile specific adjustments */
+  .mobile-padding {
+    @apply px-4 py-2;
+  }
+  
+  .mobile-text {
+    @apply text-sm;
+  }
+  
+  /* Grid adjustments for mobile */
+  .mobile-grid {
+    @apply grid-cols-1;
+  }
+}
+
+@media (max-width: 640px) {
+  .code-block {
+    @apply text-xs p-2 overflow-x-auto;
+  }
+  
+  /* Ensure text doesn't overflow on small screens */
+  .responsive-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 }

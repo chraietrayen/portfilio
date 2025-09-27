@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
   const menuItems = [
@@ -16,14 +17,33 @@ const Sidebar = () => {
   ];
 
   return (
-    <motion.div
-      initial={{ x: -250 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`bg-vscode-sidebar border-r border-vscode-border ${
-        collapsed ? 'w-16' : 'w-64'
-      } transition-all duration-300 flex flex-col`}
-    >
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setMobileOpen(!mobileOpen)}
+        className="md:hidden fixed top-4 left-4 z-50 p-2 bg-vscode-panel border border-vscode-border rounded-md"
+      >
+        <span className="text-vscode-text">☰</span>
+      </button>
+
+      {/* Mobile Overlay */}
+      {mobileOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      <motion.div
+        initial={{ x: -250 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+        className={`bg-vscode-sidebar border-r border-vscode-border ${
+          collapsed ? 'w-16' : 'w-64'
+        } transition-all duration-300 flex flex-col
+        ${mobileOpen ? 'fixed md:relative z-40 h-full' : 'hidden md:flex'}
+        md:flex`}
+      >
       {/* Header */}
       <div className="p-4 border-b border-vscode-border">
         <div className="flex items-center justify-between">
@@ -82,6 +102,16 @@ const Sidebar = () => {
         ))}
       </nav>
 
+      {/* Mobile Close Button */}
+      {mobileOpen && (
+        <button
+          onClick={() => setMobileOpen(false)}
+          className="md:hidden absolute top-4 right-4 p-2 text-vscode-text hover:bg-vscode-panel rounded"
+        >
+          ✕
+        </button>
+      )}
+
       {/* Bottom Section */}
       <div className="p-4 border-t border-vscode-border">
         {!collapsed && (
@@ -98,6 +128,7 @@ const Sidebar = () => {
         )}
       </div>
     </motion.div>
+    </>
   );
 };
 

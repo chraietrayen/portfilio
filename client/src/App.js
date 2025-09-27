@@ -30,9 +30,9 @@ function App() {
   return (
     <ProfileProvider>
       <Router>
-        <div className="flex h-screen bg-vscode-bg text-vscode-text">
+        <div className="flex flex-col md:flex-row h-screen bg-vscode-bg text-vscode-text">
           <Sidebar />
-          <main className="flex-1 overflow-hidden">
+          <main className="flex-1 overflow-hidden w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
