@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-vscode-bg text-vscode-text font-code;
+  }
+}
+
+@layer components {
+  .code-block {
+    @apply bg-vscode-panel border border-vscode-border rounded-lg p-4 font-code text-sm;
+  }
+  
+  .syntax-keyword {
+    @apply text-vscode-blue font-semibold;
+  }
+  
+  .syntax-string {
+    @apply text-vscode-orange;
+  }
+  
+  .syntax-number {
+    @apply text-vscode-green;
+  }
+  
+  .syntax-comment {
+    @apply text-vscode-comment italic;
+  }
+  
+  .syntax-property {
+    @apply text-vscode-yellow;
+  }
+  
+  .syntax-method {
+    @apply text-vscode-pink;
+  }
+  
+  .nav-item {
+    @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200;
+  }
+  
+  .nav-item:hover {
+    @apply bg-vscode-panel text-vscode-blue;
+  }
+  
+  .nav-item.active {
+    @apply bg-vscode-blue text-white;
+  }
+  
+  .btn-primary {
+    @apply bg-vscode-blue hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-vscode-panel hover:bg-vscode-border text-vscode-text border border-vscode-border font-medium py-2 px-4 rounded-md transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply bg-vscode-panel border border-vscode-border rounded-md px-3 py-2 text-vscode-text placeholder-gray-400 focus:outline-none focus:border-vscode-blue focus:ring-1 focus:ring-vscode-blue;
+  }
+  
+  .card {
+    @apply bg-vscode-panel border border-vscode-border rounded-lg p-6 shadow-lg;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Code syntax highlighting */
+.code-line {
+  display: flex;
+  align-items: center;
+}
+
+.line-number {
+  @apply text-gray-500 text-xs mr-4 select-none;
+  min-width: 2rem;
+  text-align: right;
+}
+
+/* Animations */
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid #007acc;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .code-block {
+    @apply text-xs p-3;
+  }
+}
