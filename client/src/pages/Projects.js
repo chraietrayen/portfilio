@@ -145,7 +145,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            // Featured Work
+            {`// Featured Work`}
           </motion.p>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6">
@@ -185,7 +185,7 @@ const Projects = () => {
             <CodeBlock title="projects.js" language="javascript">
               <div className="text-center py-12">
                 <p className="syntax-comment mb-4">
-                  // No projects found
+                  {`// No projects found`}
                 </p>
                 <p className="text-vscode-text">
                   <span className="syntax-keyword">const</span>{" "}

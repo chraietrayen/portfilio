@@ -38,7 +38,7 @@ const Home = () => {
         <div className="max-w-7xl w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -100 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <motion.p className="text-vscode-comment uppercase tracking-widest text-sm mb-6 font-code">// Full Stack Developer</motion.p>
+              <motion.p className="text-vscode-comment uppercase tracking-widest text-sm mb-6 font-code">{`// Full Stack Developer`}</motion.p>
               <motion.h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold leading-none mb-6">
                 <span className="modern-heading block">{personalInfo.name?.split(' ')[0] || 'Rayen'}</span>
                 <span className="text-vscode-text block">{personalInfo.name?.split(' ')[1] || 'Chraiet'}</span>
