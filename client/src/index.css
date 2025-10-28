@@ -3,10 +3,21 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+  
   body {
     @apply bg-vscode-bg text-vscode-text font-code;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -65,6 +76,52 @@
   
   .card {
     @apply bg-vscode-panel border border-vscode-border rounded-lg p-6 shadow-lg;
+  }
+  
+  /* Modern 93grados-inspired styles */
+  .modern-card {
+    @apply relative overflow-hidden rounded-2xl bg-gradient-to-br from-vscode-panel to-vscode-bg;
+    @apply border border-vscode-border/50 backdrop-blur-sm;
+    @apply transition-all duration-500 ease-smooth;
+    @apply hover:scale-[1.02] hover:shadow-2xl hover:border-vscode-blue/50;
+  }
+  
+  .modern-heading {
+    @apply font-display font-bold tracking-tight;
+    @apply bg-gradient-to-r from-vscode-blue via-vscode-green to-vscode-blue;
+    @apply bg-clip-text text-transparent bg-[length:200%_auto];
+    @apply animate-gradient;
+  }
+  
+  .glass-effect {
+    @apply bg-vscode-panel/30 backdrop-blur-md border border-vscode-border/30;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 ease-smooth hover:-translate-y-2;
+  }
+  
+  .accent-glow {
+    @apply relative;
+  }
+  
+  .accent-glow::before {
+    content: '';
+    @apply absolute -inset-1 bg-gradient-to-r from-vscode-blue to-vscode-green;
+    @apply blur-xl opacity-0 transition-opacity duration-500;
+  }
+  
+  .accent-glow:hover::before {
+    @apply opacity-30;
+  }
+  
+  .grid-modern {
+    @apply grid gap-8;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .parallax-section {
+    @apply relative overflow-hidden;
   }
 }
 

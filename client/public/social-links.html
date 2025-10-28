@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rayen Chraiet - Full Stack Developer - Mes réseaux sociaux">
+  <title>Rayen Chraiet - Social Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 5px solid #667eea;
+      margin: 0 auto 20px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    h1 {
+      margin: 0 0 5px 0;
+      color: #333;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .title {
+      color: #667eea;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .bio {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s;
+    }
+
+    .link:hover::before {
+      left: 100%;
+    }
+
+    .link:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+      border-color: #667eea;
+    }
+
+    .link-icon {
+      font-size: 28px;
+      margin-right: 15px;
+      width: 35px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .link:hover .link-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .link-content {
+      flex: 1;
+    }
+
+    .link-text {
+      font-weight: 600;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-subtitle {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .arrow {
+      font-size: 20px;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s;
+    }
+
+    .link:hover .arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      color: #999;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .link {
+        padding: 14px 16px;
+      }
+      
+      .link-text {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="/rvn.jpg" alt="Rayen Chraiet" class="profile-image" onerror="this.style.display='none'">
+      <h1>🚀 Rayen Chraiet</h1>
+      <p class="title">Full Stack Developer</p>
+      <p class="bio">Développeur passionné par la création d'expériences digitales exceptionnelles</p>
+    </div>
+    
+    <div class="links">
+      <a href="https://facebook.com/rayen.chraiet" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">📘</span>
+        <div class="link-content">
+          <span class="link-text">Facebook</span>
+          <span class="link-subtitle">Suivez-moi sur Facebook</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://instagram.com/rayen.chraiet" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">📸</span>
+        <div class="link-content">
+          <span class="link-text">Instagram</span>
+          <span class="link-subtitle">Mes photos et stories</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://snapchat.com/add/rayenchraiet" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">👻</span>
+        <div class="link-content">
+          <span class="link-text">Snapchat</span>
+          <span class="link-subtitle">Ajoutez-moi sur Snap</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://t.me/rayenchraiet" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">✈️</span>
+        <div class="link-content">
+          <span class="link-text">Telegram</span>
+          <span class="link-subtitle">Contactez-moi sur Telegram</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://linkedin.com/in/rayenchraiet" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">💼</span>
+        <div class="link-content">
+          <span class="link-text">LinkedIn</span>
+          <span class="link-subtitle">Mon réseau professionnel</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://github.com/chraietrayen" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">💻</span>
+        <div class="link-content">
+          <span class="link-text">GitHub</span>
+          <span class="link-subtitle">Mes projets open source</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="https://twitter.com/rayenchraiet" class="link" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon">🐦</span>
+        <div class="link-content">
+          <span class="link-text">Twitter</span>
+          <span class="link-subtitle">Suivez mes tweets</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="mailto:rayenchraiet2000@gmail.com" class="link">
+        <span class="link-icon">📧</span>
+        <div class="link-content">
+          <span class="link-text">Email</span>
+          <span class="link-subtitle">rayenchraiet2000@gmail.com</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="tel:+21694599198" class="link">
+        <span class="link-icon">📱</span>
+        <div class="link-content">
+          <span class="link-text">Téléphone</span>
+          <span class="link-subtitle">+216 94 599 198</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <a href="/" class="link">
+        <span class="link-icon">🌐</span>
+        <div class="link-content">
+          <span class="link-text">Portfolio</span>
+          <span class="link-subtitle">Visitez mon site web</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      © 2025 Rayen Chraiet. Tous droits réservés.
+    </div>
+  </div>
+
+  <script>
+    // Animation au scroll
+    const links = document.querySelectorAll('.link');
+    links.forEach((link, index) => {
+      link.style.opacity = '0';
+      link.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        link.style.transition = 'all 0.5s ease';
+        link.style.opacity = '1';
+        link.style.transform = 'translateY(0)';
+      }, 100 + index * 50);
+    });
+  </script>
+</body>
+</html>

@@ -13,6 +13,7 @@ const Sidebar = () => {
     { path: '/skills', name: 'skills.js', icon: '⚡', color: 'text-vscode-green' },
     { path: '/education', name: 'education.py', icon: '🎓', color: 'text-vscode-orange' },
     { path: '/experience', name: 'experience.cpp', icon: '💼', color: 'text-vscode-pink' },
+    { path: '/projects', name: 'projects.tsx', icon: '🚀', color: 'text-vscode-green' },
     { path: '/contact', name: 'contact.html', icon: '📧', color: 'text-vscode-red' }
   ];
 
@@ -83,6 +84,7 @@ const Sidebar = () => {
           >
             <NavLink
               to={item.path}
+              onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
                 `flex items-center px-3 py-2 rounded-md text-sm font-code transition-colors duration-200 mb-1 ${
                   isActive

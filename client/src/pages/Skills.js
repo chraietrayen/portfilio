@@ -21,18 +21,25 @@ const Skills = () => {
 
   const SkillCategory = ({ title, items, color }) => (
     <motion.div
-      whileHover={{ scale: 1.02 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.02, boxShadow: "0 8px 30px rgba(0, 122, 204, 0.2)" }}
+      transition={{ duration: 0.3 }}
       className="card"
     >
-      <h3 className={`${color} text-lg font-semibold mb-4`}>{title}</h3>
+      <h3 className={`${color} text-lg font-semibold mb-4 flex items-center gap-2`}>
+        <span className="text-2xl">●</span>
+        {title}
+      </h3>
       <div className="flex flex-wrap gap-2">
         {(items || []).map((item, index) => (
           <motion.span
             key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-            className="bg-vscode-bg px-3 py-1 rounded-full text-sm border border-vscode-border hover:border-vscode-blue transition-colors"
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            whileHover={{ scale: 1.1, y: -2 }}
+            transition={{ delay: index * 0.05, duration: 0.2 }}
+            className="bg-vscode-bg px-4 py-2 rounded-lg text-sm border border-vscode-border hover:border-vscode-blue hover:bg-vscode-panel transition-all cursor-default"
           >
             {item}
           </motion.span>

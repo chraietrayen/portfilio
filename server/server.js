@@ -18,13 +18,20 @@ app.use(express.json());
 app.use('/api/profile', require('./routes/profile'));
 app.use('/api/contact', require('./routes/contact'));
 
-// MongoDB connection
+// MongoDB connection with timeout
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
 })
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+.then(() => {
+  console.log('✅ MongoDB connected successfully');
+})
+.catch(err => {
+  console.log('⚠️  MongoDB connection failed:', err.message);
+  console.log('📝 Server will continue with limited functionality');
+  console.log('💡 To fix: Start MongoDB or configure MongoDB Atlas connection');
+});
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

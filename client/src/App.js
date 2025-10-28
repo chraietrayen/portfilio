@@ -8,6 +8,8 @@ import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
+import Projects from './pages/Projects';
+import NotFound from './pages/NotFound';
 import LoadingScreen from './components/LoadingScreen';
 import { ProfileProvider } from './context/ProfileContext';
 
@@ -45,7 +47,9 @@ function App() {
                 <Route path="/skills" element={<Skills />} />
                 <Route path="/education" element={<Education />} />
                 <Route path="/experience" element={<Experience />} />
+                <Route path="/projects" element={<Projects />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </motion.div>
           </main>

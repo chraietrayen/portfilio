@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import CodeBlock from '../components/CodeBlock';
+import SocialQRCode from '../components/SocialQRCode';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,12 +32,22 @@ const Contact = () => {
       await axios.post('/api/contact', formData);
       setStatus({ loading: false, success: true, error: null });
       setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => {
+        setStatus(prev => ({ ...prev, success: false }));
+      }, 5000);
     } catch (error) {
       setStatus({
         loading: false,
         success: false,
-        error: error.response?.data?.message || 'Failed to send message'
+        error: error.response?.data?.message || 'Failed to send message. Please try again.'
       });
+      
+      // Auto-hide error message after 5 seconds
+      setTimeout(() => {
+        setStatus(prev => ({ ...prev, error: null }));
+      }, 5000);
     }
   };
 
@@ -318,6 +329,9 @@ const Contact = () => {
           <div>&#125;</div>
         </CodeBlock>
       </motion.div>
+
+      {/* QR Code Section - NEW */}
+      <SocialQRCode />
 
       {/* Closing HTML tags */}
       <motion.div
