@@ -315,9 +315,8 @@ const Contact = () => {
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary text-lg px-8 py-4"
                 onClick={() => {
-                  // In a real implementation, this would trigger a PDF download
-                  alert('CV download feature coming soon!');
-                }}
+                  window.open('/files/RAYEN CHRAIET.pdf', '_blank');            
+                   }}
               >
                 📄 Download CV (PDF)
               </motion.button>

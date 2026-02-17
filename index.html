@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Rayen Chraiet — Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Rayen Chraiet — Full Stack Developer specializing in modern web technologies."/>
+  <meta name="theme-color" content="#030014"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ======= PRELOADER ======= -->
+<div id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-ring"></div>
+    <div class="preloader-ring"></div>
+    <div class="preloader-ring"></div>
+    <div class="preloader-text">
+      <span data-char="R">R</span><span data-char="A">A</span><span data-char="Y">Y</span><span data-char="E">E</span><span data-char="N">N</span>
+      <span class="preloader-dot">.</span>
+      <span data-char="D">D</span><span data-char="E">E</span><span data-char="V">V</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======= NOISE TEXTURE OVERLAY ======= -->
+<div class="noise"></div>
+
+<!-- ======= AURORA BACKGROUND ======= -->
+<div class="aurora">
+  <div class="aurora-blob aurora-1"></div>
+  <div class="aurora-blob aurora-2"></div>
+  <div class="aurora-blob aurora-3"></div>
+  <div class="aurora-blob aurora-4"></div>
+</div>
+
+<!-- ======= CURSOR ======= -->
+<div id="cursor" class="cursor"></div>
+<div id="cursor-trail" class="cursor-trail"></div>
+
+<!-- ======= SCROLL PROGRESS ======= -->
+<div id="scroll-progress"></div>
+
+<!-- ======= PARTICLES ======= -->
+<canvas id="particles"></canvas>
+
+<!-- ======= LAYOUT ======= -->
+<div class="layout">
+
+  <!-- === SIDEBAR === -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-brand">
+        <div class="brand-icon">
+          <span class="brand-letter">R</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Rayen</span>
+          <span class="brand-role">developer</span>
+        </div>
+      </div>
+    </div>
+    <nav class="sidebar-nav" id="sidebar-nav">
+      <a href="#home" class="nav-link active" data-section="home" data-tooltip="Home">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>
+        <span class="nav-label">Home</span>
+        <span class="nav-indicator"></span>
+      </a>
+      <a href="#about" class="nav-link" data-section="about" data-tooltip="About">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        <span class="nav-label">About</span>
+        <span class="nav-indicator"></span>
+      </a>
+      <a href="#skills" class="nav-link" data-section="skills" data-tooltip="Skills">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span class="nav-label">Skills</span>
+        <span class="nav-indicator"></span>
+      </a>
+      <a href="#education" class="nav-link" data-section="education" data-tooltip="Education">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12 12 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12 12 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+        <span class="nav-label">Education</span>
+        <span class="nav-indicator"></span>
+      </a>
+      <a href="#experience" class="nav-link" data-section="experience" data-tooltip="Experience">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span class="nav-label">Experience</span>
+        <span class="nav-indicator"></span>
+      </a>
+      <a href="#projects" class="nav-link" data-section="projects" data-tooltip="Projects">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+        <span class="nav-label">Projects</span>
+        <span class="nav-indicator"></span>
+      </a>
+      <a href="#contact" class="nav-link" data-section="contact" data-tooltip="Contact">
+        <div class="nav-link-bg"></div>
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span class="nav-label">Contact</span>
+        <span class="nav-indicator"></span>
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="status-badge">
+        <span class="status-pulse"></span>
+        <span>Open to work</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- === MOBILE HEADER === -->
+  <header class="mobile-header" id="mobile-header">
+    <div class="brand-icon small"><span class="brand-letter">R</span></div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- === MAIN === -->
+  <main class="main" id="main">
+    <div class="main-scroll" id="main-scroll">
+
+      <!-- ===================== HOME ===================== -->
+      <section id="home" class="page active">
+        <div class="hero">
+          <div class="hero-left">
+            <div class="hero-badge anim-up">
+              <span class="hero-badge-dot"></span>
+              Full Stack Developer
+            </div>
+            <h1 class="hero-title anim-up d1">
+              <span class="hero-line">
+                <span class="hero-word">Hi, I'm</span>
+              </span>
+              <span class="hero-line">
+                <span class="hero-word hero-name-text">Rayen<span class="hero-accent">.</span></span>
+              </span>
+            </h1>
+            <p class="hero-desc anim-up d2">I build <span class="text-glow">exceptional</span> digital experiences. Specializing in full-stack development with a passion for clean code, stunning interfaces, and seamless user experiences.</p>
+            <div class="hero-cta anim-up d3">
+              <a href="#contact" class="cta-btn primary magnetic" data-nav="contact">
+                <span class="cta-bg"></span>
+                <span class="cta-text">Let's Talk</span>
+                <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#projects" class="cta-btn outline magnetic" data-nav="projects">
+                <span class="cta-text">View Work</span>
+              </a>
+            </div>
+            <div class="hero-metrics anim-up d4">
+              <div class="metric">
+                <span class="metric-num" data-count="15">0</span>
+                <span class="metric-label">Projects</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric">
+                <span class="metric-num" data-count="5">0</span>
+                <span class="metric-label">Years Exp.</span>
+              </div>
+              <div class="metric-divider"></div>
+              <div class="metric">
+                <span class="metric-num" data-count="10">0</span>
+                <span class="metric-label">Technologies</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right anim-up d2">
+            <div class="hero-card-wrap">
+              <!-- Orbit rings -->
+              <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+              <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+              <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+              <!-- Code editor -->
+              <div class="editor">
+                <div class="editor-bar">
+                  <div class="editor-dots">
+                    <span class="ed-dot r"></span><span class="ed-dot y"></span><span class="ed-dot g"></span>
+                  </div>
+                  <span class="editor-title">rayen.config.ts</span>
+                  <div class="editor-actions">
+                    <span class="ed-action">−</span><span class="ed-action">□</span><span class="ed-action">×</span>
+                  </div>
+                </div>
+                <div class="editor-body" id="editor-code">
+                  <div class="code-line"><span class="ln">1</span><span class="kw">const</span> <span class="vr">developer</span> = {</div>
+                  <div class="code-line"><span class="ln">2</span>  <span class="pr">name</span>: <span class="st">"Rayen Chraiet"</span>,</div>
+                  <div class="code-line"><span class="ln">3</span>  <span class="pr">title</span>: <span class="st">"Full Stack Developer"</span>,</div>
+                  <div class="code-line"><span class="ln">4</span>  <span class="pr">location</span>: <span class="st">"Tunisia 🇹🇳"</span>,</div>
+                  <div class="code-line"><span class="ln">5</span>  <span class="pr">skills</span>: [</div>
+                  <div class="code-line"><span class="ln">6</span>    <span class="st">"React"</span>, <span class="st">"Node.js"</span>,</div>
+                  <div class="code-line"><span class="ln">7</span>    <span class="st">"TypeScript"</span>, <span class="st">"Python"</span>,</div>
+                  <div class="code-line"><span class="ln">8</span>  ],</div>
+                  <div class="code-line"><span class="ln">9</span>  <span class="fn">build</span>: () => <span class="st">"the future"</span>,</div>
+                  <div class="code-line"><span class="ln">10</span>};</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-hint anim-up d5">
+          <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+          <span>Scroll to explore</span>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>//</span> who I am</div>
+          <h2 class="section-heading scroll-reveal">About <span class="gradient-text">Me</span></h2>
+
+          <div class="about-grid">
+            <div class="about-text-col scroll-reveal" style="--d:.1s">
+              <div class="about-quote">
+                <span class="quote-mark">"</span>
+                I turn ideas into real-world products through clean code and creative design.
+                <span class="quote-mark">"</span>
+              </div>
+              <p>I'm a passionate Full Stack Developer from <strong>Tunisia 🇹🇳</strong>. I love crafting modern, responsive, and high-performance web applications. I thrive on turning complex problems into elegant solutions using cutting-edge technologies.</p>
+              <p>Whether it's building RESTful APIs, designing interactive UIs, or optimizing databases — I bring creativity and precision to every project I touch.</p>
+              <div class="about-highlights">
+                <div class="highlight">
+                  <div class="highlight-icon">🚀</div>
+                  <div><strong>Fast Learner</strong><br/><span class="muted">Always exploring new tech</span></div>
+                </div>
+                <div class="highlight">
+                  <div class="highlight-icon">🎯</div>
+                  <div><strong>Detail Oriented</strong><br/><span class="muted">Pixel-perfect results</span></div>
+                </div>
+                <div class="highlight">
+                  <div class="highlight-icon">💡</div>
+                  <div><strong>Problem Solver</strong><br/><span class="muted">Creative & logical thinking</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="about-info-col">
+              <div class="info-card glass-card scroll-reveal" style="--d:.2s">
+                <h3 class="card-title"><span class="card-dot blue"></span>Personal</h3>
+                <ul class="detail-list">
+                  <li><span>Name</span><strong>Rayen Chraiet</strong></li>
+                  <li><span>Age</span><strong class="accent-b">25</strong></li>
+                  <li><span>Location</span><strong>Tunisia 🇹🇳</strong></li>
+                  <li><span>License</span><strong class="accent-g">Yes</strong></li>
+                </ul>
+              </div>
+              <div class="info-card glass-card scroll-reveal" style="--d:.3s">
+                <h3 class="card-title"><span class="card-dot green"></span>Contact</h3>
+                <ul class="detail-list">
+                  <li><span>Email</span><a href="mailto:rayenchraiet2000@gmail.com" class="accent-b link-hover">rayenchraiet2000@gmail.com</a></li>
+                  <li><span>Phone</span><a href="tel:+21694599198" class="accent-g link-hover">+216 94 599 198</a></li>
+                  <li><span>GitHub</span><a href="https://github.com/chraietrayen" target="_blank" class="accent-p link-hover">chraietrayen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section id="skills" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>#</span> what I use</div>
+          <h2 class="section-heading scroll-reveal">My <span class="gradient-text">Skills</span></h2>
+
+          <div class="skills-grid">
+            <div class="skill-card glass-card scroll-reveal" style="--d:.1s" data-color="#60a5fa">
+              <div class="skill-card-glow"></div>
+              <div class="skill-header">
+                <div class="skill-icon-wrap" style="--c:#60a5fa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+                <h3>Languages</h3>
+              </div>
+              <div class="skill-pills">
+                <span class="pill" style="--i:0">JavaScript</span>
+                <span class="pill" style="--i:1">TypeScript</span>
+                <span class="pill" style="--i:2">Python</span>
+                <span class="pill" style="--i:3">C++</span>
+                <span class="pill" style="--i:4">Java</span>
+                <span class="pill" style="--i:5">C#</span>
+                <span class="pill" style="--i:6">SQL</span>
+              </div>
+              <div class="skill-bars-wrap">
+                <div class="s-bar"><span class="s-bar-label">JavaScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:95%;--c:#60a5fa"></div></div><span class="s-bar-pct">95%</span></div>
+                <div class="s-bar"><span class="s-bar-label">TypeScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:#818cf8"></div></div><span class="s-bar-pct">85%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Python</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:80%;--c:#a78bfa"></div></div><span class="s-bar-pct">80%</span></div>
+              </div>
+            </div>
+
+            <div class="skill-card glass-card scroll-reveal" style="--d:.2s" data-color="#34d399">
+              <div class="skill-card-glow"></div>
+              <div class="skill-header">
+                <div class="skill-icon-wrap" style="--c:#34d399"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+                <h3>Frameworks</h3>
+              </div>
+              <div class="skill-pills">
+                <span class="pill" style="--i:0">React</span>
+                <span class="pill" style="--i:1">Node.js</span>
+                <span class="pill" style="--i:2">Express</span>
+                <span class="pill" style="--i:3">Next.js</span>
+                <span class="pill" style="--i:4">Tailwind</span>
+              </div>
+              <div class="skill-bars-wrap">
+                <div class="s-bar"><span class="s-bar-label">React</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:92%;--c:#34d399"></div></div><span class="s-bar-pct">92%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Node.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:88%;--c:#6ee7b7"></div></div><span class="s-bar-pct">88%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Next.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:75%;--c:#a7f3d0"></div></div><span class="s-bar-pct">75%</span></div>
+              </div>
+            </div>
+
+            <div class="skill-card glass-card scroll-reveal" style="--d:.3s" data-color="#fbbf24">
+              <div class="skill-card-glow"></div>
+              <div class="skill-header">
+                <div class="skill-icon-wrap" style="--c:#fbbf24"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <h3>Tools & DevOps</h3>
+              </div>
+              <div class="skill-pills">
+                <span class="pill" style="--i:0">Git</span>
+                <span class="pill" style="--i:1">Docker</span>
+                <span class="pill" style="--i:2">AWS</span>
+                <span class="pill" style="--i:3">MongoDB</span>
+                <span class="pill" style="--i:4">PostgreSQL</span>
+                <span class="pill" style="--i:5">CI/CD</span>
+              </div>
+              <div class="skill-bars-wrap">
+                <div class="s-bar"><span class="s-bar-label">Git</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:93%;--c:#fbbf24"></div></div><span class="s-bar-pct">93%</span></div>
+                <div class="s-bar"><span class="s-bar-label">MongoDB</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:#fcd34d"></div></div><span class="s-bar-pct">85%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Docker</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:72%;--c:#fde68a"></div></div><span class="s-bar-pct">72%</span></div>
+              </div>
+            </div>
+
+            <div class="skill-card glass-card scroll-reveal" style="--d:.4s" data-color="#f472b6">
+              <div class="skill-card-glow"></div>
+              <div class="skill-header">
+                <div class="skill-icon-wrap" style="--c:#f472b6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+                <h3>Design & Software</h3>
+              </div>
+              <div class="skill-pills">
+                <span class="pill" style="--i:0">VS Code</span>
+                <span class="pill" style="--i:1">Figma</span>
+                <span class="pill" style="--i:2">Photoshop</span>
+                <span class="pill" style="--i:3">Linux</span>
+                <span class="pill" style="--i:4">Postman</span>
+              </div>
+              <div class="skill-bars-wrap">
+                <div class="s-bar"><span class="s-bar-label">VS Code</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:96%;--c:#f472b6"></div></div><span class="s-bar-pct">96%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Figma</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:78%;--c:#f9a8d4"></div></div><span class="s-bar-pct">78%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Linux</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:82%;--c:#fbcfe8"></div></div><span class="s-bar-pct">82%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EDUCATION ===================== -->
+      <section id="education" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>//</span> learning path</div>
+          <h2 class="section-heading scroll-reveal">My <span class="gradient-text">Education</span></h2>
+
+          <div class="timeline">
+            <div class="tl-line"></div>
+
+            <div class="tl-item scroll-reveal" style="--d:.1s">
+              <div class="tl-dot"><span>🎓</span></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top">
+                  <h3>Higher Institute of Technological Studies</h3>
+                  <span class="tl-badge">2020 — 2023</span>
+                </div>
+                <h4 class="tl-sub">License in Computer Science</h4>
+                <p>Specialized in software engineering, web development, and database management. Built full-stack projects and participated in hackathons.</p>
+              </div>
+            </div>
+
+            <div class="tl-item scroll-reveal" style="--d:.2s">
+              <div class="tl-dot"><span>📚</span></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top">
+                  <h3>High School — Baccalaureate</h3>
+                  <span class="tl-badge">2017 — 2020</span>
+                </div>
+                <h4 class="tl-sub">Technical Sciences</h4>
+                <p>Graduated with honors. Focused on mathematics, physics, and computer science. First introduction to programming.</p>
+              </div>
+            </div>
+
+            <div class="tl-item scroll-reveal" style="--d:.3s">
+              <div class="tl-dot"><span>🏆</span></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top">
+                  <h3>Online Certifications</h3>
+                  <span class="tl-badge">2021 — Present</span>
+                </div>
+                <h4 class="tl-sub">Continuous Learning</h4>
+                <p>React, Node.js, AWS Cloud Practitioner, and advanced JavaScript — Udemy, Coursera, freeCodeCamp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section id="experience" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>//</span> career journey</div>
+          <h2 class="section-heading scroll-reveal">My <span class="gradient-text">Experience</span></h2>
+
+          <div class="timeline">
+            <div class="tl-line"></div>
+
+            <div class="tl-item scroll-reveal" style="--d:.1s">
+              <div class="tl-dot"><span>💼</span></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top">
+                  <h3>Full Stack Developer</h3>
+                  <span class="tl-badge tl-job">Job</span>
+                </div>
+                <h4 class="tl-sub">Tech Solutions Company — <span class="muted">2023 — Present</span></h4>
+                <p>Building and maintaining full-stack web applications with React, Node.js, and MongoDB. Leading frontend architecture and CI/CD pipelines.</p>
+                <div class="tl-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Docker</span></div>
+              </div>
+            </div>
+
+            <div class="tl-item scroll-reveal" style="--d:.2s">
+              <div class="tl-dot"><span>🎯</span></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top">
+                  <h3>Web Development Intern</h3>
+                  <span class="tl-badge tl-intern">Internship</span>
+                </div>
+                <h4 class="tl-sub">Digital Agency — <span class="muted">2022 — 2023</span></h4>
+                <p>Built responsive websites for clients. Hands-on with modern frameworks, RESTful APIs, and agile methodology.</p>
+                <div class="tl-tags"><span>JavaScript</span><span>Express</span><span>PostgreSQL</span><span>Git</span></div>
+              </div>
+            </div>
+
+            <div class="tl-item scroll-reveal" style="--d:.3s">
+              <div class="tl-dot"><span>🤝</span></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top">
+                  <h3>IT Club Lead</h3>
+                  <span class="tl-badge tl-assoc">Association</span>
+                </div>
+                <h4 class="tl-sub">University Dev Club — <span class="muted">2020 — 2023</span></h4>
+                <p>Organized coding workshops, hackathons, and tech talks. Mentored junior students in web development.</p>
+                <div class="tl-tags"><span>Leadership</span><span>Mentoring</span><span>Events</span><span>Open Source</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section id="projects" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>//</span> featured work</div>
+          <h2 class="section-heading scroll-reveal">My <span class="gradient-text">Projects</span></h2>
+          <p class="section-sub scroll-reveal">A curated showcase of projects that define my craft.</p>
+
+          <div class="projects-grid">
+            <article class="proj-card scroll-reveal" style="--d:.1s">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#6366f1,#8b5cf6)"><span class="proj-emoji">🌐</span>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen/portfilio" target="_blank" class="proj-link-btn">GitHub</a>
+                  <a href="#" class="proj-link-btn accent">Live</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3>Portfolio Website</h3>
+                <p>Modern animated portfolio with VS Code-inspired design, particles, glassmorphism, and silky-smooth animations.</p>
+                <div class="proj-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div>
+              </div>
+            </article>
+
+            <article class="proj-card scroll-reveal" style="--d:.2s">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#34d399,#3b82f6)"><span class="proj-emoji">🛒</span>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn">GitHub</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3>E-Commerce Platform</h3>
+                <p>Full-featured online store with cart, checkout, auth, admin dashboard, and real-time inventory.</p>
+                <div class="proj-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
+              </div>
+            </article>
+
+            <article class="proj-card scroll-reveal" style="--d:.3s">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#f472b6,#a78bfa)"><span class="proj-emoji">💬</span>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn">GitHub</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3>Real-Time Chat App</h3>
+                <p>WebSocket messaging with rooms, file sharing, typing indicators, and end-to-end encryption.</p>
+                <div class="proj-tech"><span>Socket.io</span><span>Express</span><span>React</span><span>Redis</span></div>
+              </div>
+            </article>
+
+            <article class="proj-card scroll-reveal" style="--d:.4s">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#fbbf24,#f87171)"><span class="proj-emoji">📊</span>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn">GitHub</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3>Task Management</h3>
+                <p>Kanban board with drag-and-drop, team collaboration, progress tracking, and analytics.</p>
+                <div class="proj-tech"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div>
+              </div>
+            </article>
+
+            <article class="proj-card scroll-reveal" style="--d:.5s">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#60a5fa,#34d399)"><span class="proj-emoji">🤖</span>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn">GitHub</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3>AI Content Generator</h3>
+                <p>AI-powered creation tool using OpenAI APIs for blog posts, social media, and marketing copy.</p>
+                <div class="proj-tech"><span>Python</span><span>FastAPI</span><span>OpenAI</span><span>React</span></div>
+              </div>
+            </article>
+
+            <article class="proj-card scroll-reveal" style="--d:.6s">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#a78bfa,#60a5fa)"><span class="proj-emoji">📱</span>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn">GitHub</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3>Weather & News PWA</h3>
+                <p>Progressive Web App with real-time weather, curated news, offline support, and push notifications.</p>
+                <div class="proj-tech"><span>PWA</span><span>JavaScript</span><span>APIs</span><span>SW</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>&lt;/&gt;</span> let's connect</div>
+          <h2 class="section-heading scroll-reveal">Get in <span class="gradient-text">Touch</span></h2>
+
+          <div class="contact-grid">
+            <div class="contact-left scroll-reveal" style="--d:.1s">
+              <h3 class="contact-cta-text">Have a project in mind?<br/><span class="gradient-text">Let's build it together.</span></h3>
+              <div class="contact-links">
+                <a href="mailto:rayenchraiet2000@gmail.com" class="c-link glass-card">
+                  <div class="c-link-icon">📧</div>
+                  <div><strong>Email</strong><span>rayenchraiet2000@gmail.com</span></div>
+                </a>
+                <a href="tel:+21694599198" class="c-link glass-card">
+                  <div class="c-link-icon">📱</div>
+                  <div><strong>Phone</strong><span>+216 94 599 198</span></div>
+                </a>
+                <a href="https://github.com/chraietrayen" target="_blank" class="c-link glass-card">
+                  <div class="c-link-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  </div>
+                  <div><strong>GitHub</strong><span>chraietrayen</span></div>
+                </a>
+              </div>
+            </div>
+            <div class="contact-right scroll-reveal" style="--d:.3s">
+              <form id="contact-form" class="contact-form glass-card">
+                <h3>Send a Message</h3>
+                <div class="form-duo">
+                  <div class="field">
+                    <input type="text" name="name" id="name" required placeholder=" "/>
+                    <label for="name">Your Name</label>
+                    <div class="field-line"></div>
+                  </div>
+                  <div class="field">
+                    <input type="email" name="email" id="email" required placeholder=" "/>
+                    <label for="email">Email</label>
+                    <div class="field-line"></div>
+                  </div>
+                </div>
+                <div class="field">
+                  <input type="text" name="subject" id="subject" required placeholder=" "/>
+                  <label for="subject">Subject</label>
+                  <div class="field-line"></div>
+                </div>
+                <div class="field">
+                  <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+                  <label for="message">Message</label>
+                  <div class="field-line"></div>
+                </div>
+                <button type="submit" class="submit-btn magnetic">
+                  <span class="submit-bg"></span>
+                  <span class="submit-text">Send Message</span>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+                <div id="form-status" class="form-status-msg"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <span>&copy; 2026 Rayen Chraiet. Crafted with passion.</span>
+          <div class="footer-links">
+            <a href="https://github.com/chraietrayen" target="_blank">GitHub</a>
+            <a href="mailto:rayenchraiet2000@gmail.com">Email</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

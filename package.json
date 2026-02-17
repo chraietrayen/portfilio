@@ -1,28 +1,19 @@
 {
-  "name": "portfolio-app",
-  "version": "1.0.0",
-  "description": "Full-stack personal portfolio web application",
-  "main": "index.js",
+  "name": "portfolio-rayen-chraiet",
+  "version": "2.0.0",
+  "description": "Personal portfolio website — pure HTML, CSS & JavaScript with VS Code-inspired design",
+  "main": "index.html",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "install-server": "cd server && npm install",
-    "install-client": "cd client && npm install",
-    "install-all": "npm run install-server && npm run install-client",
-    "heroku-postbuild": "npm run install-all && npm run build"
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.0"
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000 --no-clipboard"
   },
   "keywords": [
     "portfolio",
-    "fullstack",
-    "react",
-    "express",
-    "mongodb"
+    "html",
+    "css",
+    "javascript",
+    "static-site"
   ],
-  "author": "Rayen",
+  "author": "Rayen Chraiet",
   "license": "MIT"
 }

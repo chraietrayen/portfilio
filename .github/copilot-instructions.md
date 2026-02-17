@@ -1,29 +1,38 @@
-- [x] Verify that the copilot-instructions.md file in the .github directory is created.
+# Portfolio Project — Copilot Instructions
 
-- [x] Clarify Project Requirements
-	Full-stack personal portfolio web app with React + TailwindCSS frontend, Node.js Express backend, MongoDB database
+## Overview
+Static personal portfolio website for Rayen Chraiet built with pure HTML, CSS, and JavaScript.
+VS Code dark theme inspired design with rich animations, transitions, and interactive effects.
 
-- [x] Scaffold the Project
-	Project structure created manually with React frontend, Node.js backend, and MongoDB integration
+## Tech Stack
+- HTML5, CSS3, Vanilla JavaScript (ES6+)
+- Google Fonts (JetBrains Mono, Inter)
+- Deployed on Vercel as a static site
 
-- [x] Customize the Project
-	Full-stack portfolio application customized with code editor theme, all required pages, API endpoints, and MongoDB integration
+## Project Structure
+- `index.html` — Single HTML file with all 7 sections (Home, About, Skills, Education, Experience, Projects, Contact)
+- `css/style.css` — All styles including animations, glassmorphism, responsive layouts
+- `js/script.js` — SPA navigation, particles canvas, scroll reveals, form handling, tilt effects
+- `vercel.json` — Vercel static deployment configuration
+- `package.json` — Dev server scripts (`npx serve`)
 
-- [x] Install Required Extensions
-	No specific extensions required for this full-stack project
+## Key Features
+- SPA-like section switching with tab bar management
+- Particle network canvas background
+- Glassmorphism cards, animated gradient text, 3D tilt cards
+- Scroll-reveal animations via Intersection Observer
+- Skill bar fill animations, timeline dot-pop effects
+- Magnetic hover buttons with ripple click effects
+- Cursor glow, scroll progress bar, preloader
+- Keyboard shortcuts (1-7 for nav, Ctrl+K to cycle)
+- Mobile responsive with sidebar drawer
 
-- [x] Compile the Project
-	Dependencies and project structure are ready. Install dependencies using npm install in root, client, and server directories.
+## Running Locally
+```bash
+npx serve . -l 3000
+```
 
-- [x] Create and Run Task
-	Verify that all previous steps have been completed.
-	Check https://code.visualstudio.com/docs/debugtest/tasks to determine if the project needs a task. If so, use the create_and_run_task to create and launch a task based on package.json, README.md, and project structure.
-	Skip this step otherwise.
-
-- [x] Launch the Project
-	Project is ready to launch. Tasks created for development server. Node.js installation required.
-
-- [x] Ensure Documentation is Complete
-	Verify that all previous steps have been completed.
-	Verify that README.md and the copilot-instructions.md file in the .github directory exists and contains current project information.
-	Clean up the copilot-instructions.md file in the .github directory by removing all HTML comments.
+## Deploying
+```bash
+vercel --prod
+```
