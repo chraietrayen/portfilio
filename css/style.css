@@ -15,8 +15,8 @@ img{max-width:100%;display:block}
 
 /* ── Dark Theme (default) ── */
 :root,[data-theme="dark"]{
-  --bg:#030014;
-  --bg2:#0a0a1a;
+  --bg:#0a1628;
+  --bg2:#0d1f3c;
   --surface:rgba(255,255,255,.04);
   --surface2:rgba(255,255,255,.07);
   --border:rgba(255,255,255,.08);
@@ -25,14 +25,14 @@ img{max-width:100%;display:block}
   --text2:#94a3b8;
   --text3:#64748b;
   --heading:#f8fafc;
-  --accent:#818cf8;
-  --accent2:#6366f1;
+  --accent:#3b82f6;
+  --accent2:#1d4ed8;
   --accent-g:#34d399;
   --accent-b:#60a5fa;
-  --accent-p:#a78bfa;
+  --accent-p:#818cf8;
   --accent-y:#fbbf24;
-  --accent-pk:#f472b6;
-  --glow:rgba(129,140,248,.15);
+  --accent-pk:#38bdf8;
+  --glow:rgba(59,130,246,.15);
   --glass:rgba(255,255,255,.03);
   --glass-b:rgba(255,255,255,.06);
   --shadow:0 8px 32px rgba(0,0,0,.4);
@@ -40,15 +40,15 @@ img{max-width:100%;display:block}
   --card-hover:rgba(255,255,255,.06);
   --noise-opacity:.03;
   --aurora-opacity:.35;
-  --particle-color:rgba(255,255,255,.15);
-  --cursor-color:rgba(129,140,248,.5);
+  --particle-color:rgba(59,130,246,.1);
+  --cursor-color:rgba(59,130,246,.5);
   --invert:0;
 }
 
 /* ── Light Theme ── */
 [data-theme="light"]{
-  --bg:#f8f9fc;
-  --bg2:#eef0f6;
+  --bg:#f0f4ff;
+  --bg2:#e0e8f9;
   --surface:rgba(0,0,0,.03);
   --surface2:rgba(0,0,0,.05);
   --border:rgba(0,0,0,.08);
@@ -57,14 +57,14 @@ img{max-width:100%;display:block}
   --text2:#64748b;
   --text3:#94a3b8;
   --heading:#0f172a;
-  --accent:#6366f1;
-  --accent2:#4f46e5;
+  --accent:#2563eb;
+  --accent2:#1d4ed8;
   --accent-g:#10b981;
   --accent-b:#3b82f6;
-  --accent-p:#8b5cf6;
+  --accent-p:#6366f1;
   --accent-y:#f59e0b;
-  --accent-pk:#ec4899;
-  --glow:rgba(99,102,241,.1);
+  --accent-pk:#0ea5e9;
+  --glow:rgba(37,99,235,.1);
   --glass:rgba(255,255,255,.6);
   --glass-b:rgba(255,255,255,.8);
   --shadow:0 8px 32px rgba(0,0,0,.08);
@@ -72,8 +72,8 @@ img{max-width:100%;display:block}
   --card-hover:rgba(255,255,255,.9);
   --noise-opacity:.015;
   --aurora-opacity:.12;
-  --particle-color:rgba(99,102,241,.12);
-  --cursor-color:rgba(99,102,241,.4);
+  --particle-color:rgba(37,99,235,.12);
+  --cursor-color:rgba(37,99,235,.4);
   --invert:0;
 }
 
@@ -81,7 +81,7 @@ img{max-width:100%;display:block}
 .font-mono{font-family:'JetBrains Mono',monospace}
 .font-display{font-family:'Space Grotesk','Inter',sans-serif}
 .muted{color:var(--text2)}
-.gradient-text{background:linear-gradient(135deg,var(--accent),var(--accent-pk),var(--accent-b));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-text{background:linear-gradient(135deg,var(--accent),var(--accent-b),#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .accent-b{color:var(--accent-b)}
 .accent-g{color:var(--accent-g)}
 .accent-p{color:var(--accent-p)}
@@ -95,9 +95,9 @@ img{max-width:100%;display:block}
 /* ── Aurora ── */
 .aurora{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0;opacity:var(--aurora-opacity)}
 .aurora-blob{position:absolute;border-radius:50%;filter:blur(120px);will-change:transform;animation:aurora-float 20s ease-in-out infinite alternate}
-.aurora-1{width:600px;height:600px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(99,102,241,.5),transparent 70%);animation-delay:0s}
-.aurora-2{width:500px;height:500px;bottom:-10%;right:-10%;background:radial-gradient(circle,rgba(139,92,246,.5),transparent 70%);animation-delay:-5s}
-.aurora-3{width:450px;height:450px;top:40%;left:50%;background:radial-gradient(circle,rgba(236,72,153,.35),transparent 70%);animation-delay:-10s}
+.aurora-1{width:600px;height:600px;top:-15%;left:-10%;background:radial-gradient(circle,rgba(59,130,246,.5),transparent 70%);animation-delay:0s}
+.aurora-2{width:500px;height:500px;bottom:-10%;right:-10%;background:radial-gradient(circle,rgba(14,165,233,.5),transparent 70%);animation-delay:-5s}
+.aurora-3{width:450px;height:450px;top:40%;left:50%;background:radial-gradient(circle,rgba(56,189,248,.35),transparent 70%);animation-delay:-10s}
 .aurora-4{width:350px;height:350px;top:20%;right:20%;background:radial-gradient(circle,rgba(52,211,153,.3),transparent 70%);animation-delay:-15s}
 
 @keyframes aurora-float{
@@ -112,7 +112,7 @@ img{max-width:100%;display:block}
 
 /* ── Custom Cursor ── */
 .cursor{position:fixed;width:20px;height:20px;border:2px solid var(--accent);border-radius:50%;pointer-events:none;z-index:10001;transform:translate(-50%,-50%);transition:width .35s cubic-bezier(.4,0,.2,1),height .35s cubic-bezier(.4,0,.2,1),border-color .35s,background .35s;mix-blend-mode:difference}
-.cursor.hover{width:50px;height:50px;background:rgba(129,140,248,.15);border-color:var(--accent-pk)}
+.cursor.hover{width:50px;height:50px;background:rgba(59,130,246,.15);border-color:var(--accent-b)}
 .cursor-trail{position:fixed;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:transform .15s ease-out;opacity:.5}
 @media(hover:none){.cursor,.cursor-trail{display:none!important}}
 
@@ -248,8 +248,8 @@ img{max-width:100%;display:block}
 
 /* CTA Buttons */
 .cta-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;border-radius:12px;font-weight:600;font-size:.9rem;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s}
-.cta-btn.primary{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 4px 20px rgba(99,102,241,.3)}
-.cta-btn.primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(99,102,241,.4)}
+.cta-btn.primary{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 4px 20px rgba(59,130,246,.3)}
+.cta-btn.primary:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
 .cta-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .35s}
 .cta-btn:hover .cta-bg{opacity:1}
 .cta-arrow{width:18px;height:18px;transition:transform .35s cubic-bezier(.4,0,.2,1)}
@@ -404,7 +404,7 @@ img{max-width:100%;display:block}
 
 /* Submit Button */
 .submit-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2.5rem;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:600;font-size:.9rem;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s}
-.submit-btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(99,102,241,.4)}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
 .submit-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);opacity:0;transition:opacity .35s}
 .submit-btn:hover .submit-bg{opacity:1}
 .submit-btn svg{width:16px;height:16px}
@@ -424,6 +424,20 @@ img{max-width:100%;display:block}
 .magnetic{position:relative;overflow:hidden}
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:ripple-anim .7s ease-out forwards;pointer-events:none}
 @keyframes ripple-anim{to{transform:scale(4);opacity:0}}
+
+/* ═══════════════════ QR CODE ═══════════════════ */
+.qr-section{margin-top:2rem}
+.qr-card{text-align:center}
+.qr-header{display:flex;align-items:center;gap:.6rem;justify-content:center;margin-bottom:1.25rem}
+.qr-header-icon{width:22px;height:22px;color:var(--accent)}
+.qr-header h4{font-size:.95rem;font-weight:700;color:var(--heading);transition:color .5s}
+.qr-codes{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap}
+.qr-item{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.qr-item .qr-code{width:150px;height:150px;padding:10px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .4s cubic-bezier(.4,0,.2,1),box-shadow .4s}
+.qr-item:hover .qr-code{transform:scale(1.05);box-shadow:0 8px 30px rgba(59,130,246,.2)}
+.qr-code canvas,.qr-code img{width:100%!important;height:100%!important;border-radius:6px}
+.qr-label{font-size:.75rem;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.05em;transition:color .5s}
+.qr-sublabel{font-size:.65rem;color:var(--text3);opacity:.7;margin-top:-.3rem}
 
 /* ═══════════════════ RTL SUPPORT ═══════════════════ */
 [dir="rtl"] .sidebar{border-right:none;border-left:1px solid var(--border)}

@@ -38,7 +38,8 @@ const TRANSLATIONS = {
     'contact.tag':'let\'s connect','contact.heading':'Get in <span class="gradient-text">Touch</span>',
     'contact.cta':'Have a project in mind?<br/><span class="gradient-text">Let\'s build it together.</span>',
     'contact.form_title':'Send a Message','contact.name':'Your Name','contact.subject':'Subject','contact.message':'Message','contact.send':'Send Message',
-    'footer.text':'Crafted with passion.'
+    'footer.text':'Crafted with passion.',
+    'contact.qr_title':'Scan to Connect','contact.qr_visit':'Visit Portfolio','contact.qr_save':'Save Contact','contact.qr_vcard':'vCard'
   },
   fr: {
     'nav.home':'Accueil','nav.about':'À propos','nav.skills':'Compétences','nav.education':'Éducation',
@@ -71,7 +72,8 @@ const TRANSLATIONS = {
     'contact.tag':'restons en contact','contact.heading':'Me <span class="gradient-text">Contacter</span>',
     'contact.cta':'Un projet en tête ?<br/><span class="gradient-text">Construisons-le ensemble.</span>',
     'contact.form_title':'Envoyer un message','contact.name':'Votre nom','contact.subject':'Sujet','contact.message':'Message','contact.send':'Envoyer',
-    'footer.text':'Créé avec passion.'
+    'footer.text':'Créé avec passion.',
+    'contact.qr_title':'Scanner pour se connecter','contact.qr_visit':'Visiter le portfolio','contact.qr_save':'Enregistrer le contact','contact.qr_vcard':'vCard'
   },
   de: {
     'nav.home':'Startseite','nav.about':'Über mich','nav.skills':'Fähigkeiten','nav.education':'Bildung',
@@ -104,7 +106,8 @@ const TRANSLATIONS = {
     'contact.tag':'in Kontakt treten','contact.heading':'<span class="gradient-text">Kontakt</span> aufnehmen',
     'contact.cta':'Ein Projekt im Sinn?<br/><span class="gradient-text">Lass es uns gemeinsam bauen.</span>',
     'contact.form_title':'Nachricht senden','contact.name':'Ihr Name','contact.subject':'Betreff','contact.message':'Nachricht','contact.send':'Senden',
-    'footer.text':'Mit Leidenschaft erstellt.'
+    'footer.text':'Mit Leidenschaft erstellt.',
+    'contact.qr_title':'Scannen zum Verbinden','contact.qr_visit':'Portfolio besuchen','contact.qr_save':'Kontakt speichern','contact.qr_vcard':'vCard'
   },
   ar: {
     'nav.home':'الرئيسية','nav.about':'عني','nav.skills':'المهارات','nav.education':'التعليم',
@@ -137,7 +140,8 @@ const TRANSLATIONS = {
     'contact.tag':'تواصل معي','contact.heading':'<span class="gradient-text">تواصل</span> معي',
     'contact.cta':'لديك مشروع في ذهنك؟<br/><span class="gradient-text">لنبنيه معًا.</span>',
     'contact.form_title':'أرسل رسالة','contact.name':'اسمك','contact.subject':'الموضوع','contact.message':'الرسالة','contact.send':'إرسال',
-    'footer.text':'صُنع بشغف.'
+    'footer.text':'صُنع بشغف.',
+    'contact.qr_title':'امسح للتواصل','contact.qr_visit':'زيارة البورتفوليو','contact.qr_save':'حفظ جهة الاتصال','contact.qr_vcard':'بطاقة اتصال'
   }
 };
 
@@ -168,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initKeyboardShortcuts();
   initSkillBars();
+  initQRCodes();
 });
 
 /* ═══════════ LUCIDE ICONS ═══════════ */
@@ -181,7 +186,7 @@ function applyTheme(theme){
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if(meta) meta.content = theme === 'dark' ? '#030014' : '#f8f9fc';
+  if(meta) meta.content = theme === 'dark' ? '#0a1628' : '#f0f4ff';
 }
 
 function initThemeToggle(){
@@ -624,6 +629,47 @@ function initKeyboardShortcuts(){
       if(window.navigateTo) window.navigateTo(next);
     }
   });
+}
+
+/* ═══════════ QR CODES ═══════════ */
+function initQRCodes(){
+  if(typeof QRCode === 'undefined') return;
+  const portfolioEl = document.getElementById('qr-portfolio');
+  const vcardEl = document.getElementById('qr-vcard');
+
+  if(portfolioEl && !portfolioEl.hasChildNodes()){
+    new QRCode(portfolioEl, {
+      text: window.location.origin || 'https://portfilio-chraietrayen.vercel.app',
+      width: 130,
+      height: 130,
+      colorDark: '#1d4ed8',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  }
+
+  if(vcardEl && !vcardEl.hasChildNodes()){
+    const vcard = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:Chraiet;Rayen;;;',
+      'FN:Rayen Chraiet',
+      'TITLE:Full Stack Developer',
+      'TEL;TYPE=CELL:+21694599198',
+      'EMAIL:rayenchraiet2000@gmail.com',
+      'URL:https://github.com/chraietrayen',
+      'NOTE:Full Stack Developer from Tunisia',
+      'END:VCARD'
+    ].join('\n');
+    new QRCode(vcardEl, {
+      text: vcard,
+      width: 130,
+      height: 130,
+      colorDark: '#1d4ed8',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  }
 }
 
 })(); 
