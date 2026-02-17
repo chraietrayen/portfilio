@@ -4,8 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Rayen Chraiet — Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Rayen Chraiet — Full Stack Developer. GTA VI inspired cinematic design."/>
-  <meta name="theme-color" content="#050510"/>
+  <meta name="description" content="AAA-quality cinematic portfolio of Rayen Chraiet — Full Stack Developer."/>
+  <meta name="theme-color" content="#030014"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -31,12 +31,12 @@
 <!-- NOISE -->
 <div class="noise"></div>
 
-<!-- NEON AURORA -->
+<!-- AURORA -->
 <div class="aurora">
-  <div class="aurora-blob aurora-1"></div>
-  <div class="aurora-blob aurora-2"></div>
-  <div class="aurora-blob aurora-3"></div>
-  <div class="aurora-blob aurora-4"></div>
+  <div class="aurora-blob a1"></div>
+  <div class="aurora-blob a2"></div>
+  <div class="aurora-blob a3"></div>
+  <div class="aurora-blob a4"></div>
 </div>
 
 <!-- CURSOR -->
@@ -49,20 +49,22 @@
 <!-- PARTICLES -->
 <canvas id="particles"></canvas>
 
-<!-- LAYOUT -->
+<!-- ==================== LAYOUT ==================== -->
 <div class="layout">
 
   <!-- SIDEBAR -->
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-head">
-      <div class="sidebar-brand">
-        <div class="brand-icon"><span class="brand-letter">R</span></div>
-        <div class="brand-text">
-          <span class="brand-name">Rayen</span>
-          <span class="brand-role">developer</span>
-        </div>
+      <div class="sidebar-avatar-wrap">
+        <div class="sidebar-avatar-ring"></div>
+        <img src="public/rvn.png" alt="Rayen Chraiet" class="sidebar-avatar"/>
+        <span class="sidebar-online-dot"></span>
       </div>
+      <h2 class="sidebar-name">Rayen<span class="gold">.</span></h2>
+      <span class="sidebar-role">Full Stack Developer</span>
+      <span class="sidebar-status"><span class="pulse-dot"></span> <span data-i18n="nav.status">Open to work</span></span>
     </div>
+
     <nav class="sidebar-nav" id="sidebar-nav">
       <a href="#home" class="nav-link active" data-section="home">
         <div class="nav-link-bg"></div>
@@ -100,6 +102,12 @@
         <span class="nav-label" data-i18n="nav.projects">Projects</span>
         <span class="nav-indicator"></span>
       </a>
+      <a href="#hobbies" class="nav-link" data-section="hobbies">
+        <div class="nav-link-bg"></div>
+        <i data-lucide="gamepad-2" class="nav-icon"></i>
+        <span class="nav-label" data-i18n="nav.hobbies">Hobbies</span>
+        <span class="nav-indicator"></span>
+      </a>
       <a href="#contact" class="nav-link" data-section="contact">
         <div class="nav-link-bg"></div>
         <i data-lucide="mail" class="nav-icon"></i>
@@ -108,7 +116,6 @@
       </a>
     </nav>
 
-    <!-- SIDEBAR CONTROLS -->
     <div class="sidebar-controls">
       <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
         <i data-lucide="sun" class="icon-sun"></i>
@@ -129,10 +136,7 @@
     </div>
 
     <div class="sidebar-bottom">
-      <div class="status-badge">
-        <span class="status-pulse"></span>
-        <span data-i18n="nav.status">Open to work</span>
-      </div>
+      <div class="fps-counter" id="fps-counter">60 FPS</div>
     </div>
   </aside>
 
@@ -158,44 +162,37 @@
       <!-- ==================== HOME ==================== -->
       <section id="home" class="page active">
         <div class="hero">
-          <div class="hero-left">
+          <div class="hero-content">
             <div class="hero-badge anim-up">
               <span class="hero-badge-dot"></span>
               <span data-i18n="home.badge">Full Stack Developer</span>
             </div>
             <h1 class="hero-title anim-up d1">
-              <span class="hero-line"><span class="hero-word" data-i18n="home.greeting">Hi, I'm</span></span>
-              <span class="hero-line"><span class="hero-name-text neon-text">RAYEN<span class="hero-accent">.</span></span></span>
+              <span class="hero-line"><span class="hero-small" data-i18n="home.line1">I Build</span></span>
+              <span class="hero-line"><span class="hero-big neon-text">Digital</span></span>
+              <span class="hero-line"><span class="hero-big">Experiences<span class="gold">.</span></span></span>
             </h1>
-            <p class="hero-desc anim-up d2" data-i18n="home.desc">I build exceptional digital experiences. Specializing in full-stack development with a passion for clean code, stunning interfaces, and seamless user experiences.</p>
+            <p class="hero-subtitle anim-up d2" data-i18n="home.subtitle">Creative Developer &bull; UI Engineer &bull; Tech Artist</p>
+            <p class="hero-desc anim-up d2" data-i18n="home.desc">I craft exceptional digital experiences. Specializing in full-stack development with a passion for clean code, stunning interfaces, and seamless user experiences.</p>
             <div class="hero-cta anim-up d3">
-              <a href="#contact" class="cta-btn primary magnetic" data-nav="contact">
+              <a href="#projects" class="cta-btn primary magnetic" data-nav="projects">
                 <span class="cta-bg"></span>
-                <span class="cta-text" data-i18n="home.cta1">Let's Talk</span>
+                <span class="cta-text" data-i18n="home.cta1">VIEW PROJECTS</span>
                 <i data-lucide="arrow-right" class="cta-arrow"></i>
               </a>
-              <a href="#projects" class="cta-btn outline magnetic" data-nav="projects">
-                <span class="cta-text" data-i18n="home.cta2">View Work</span>
+              <a href="#contact" class="cta-btn outline magnetic" data-nav="contact">
+                <span class="cta-text" data-i18n="home.cta2">CONTACT ME</span>
               </a>
             </div>
             <div class="hero-metrics anim-up d4">
-              <div class="metric">
-                <span class="metric-num" data-count="15">0</span>
-                <span class="metric-label" data-i18n="home.projects">Projects</span>
-              </div>
+              <div class="metric"><span class="metric-num" data-count="15">0</span><span class="metric-label" data-i18n="home.projects">Projects</span></div>
               <div class="metric-divider"></div>
-              <div class="metric">
-                <span class="metric-num" data-count="5">0</span>
-                <span class="metric-label" data-i18n="home.experience">Years Exp.</span>
-              </div>
+              <div class="metric"><span class="metric-num" data-count="5">0</span><span class="metric-label" data-i18n="home.experience">Years Exp.</span></div>
               <div class="metric-divider"></div>
-              <div class="metric">
-                <span class="metric-num" data-count="10">0</span>
-                <span class="metric-label" data-i18n="home.technologies">Technologies</span>
-              </div>
+              <div class="metric"><span class="metric-num" data-count="10">0</span><span class="metric-label" data-i18n="home.technologies">Technologies</span></div>
             </div>
           </div>
-          <div class="hero-right anim-up d2">
+          <div class="hero-visual anim-up d2">
             <div class="hero-card-wrap">
               <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
               <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
@@ -211,12 +208,10 @@
                   <div class="code-line"><span class="ln">2</span>  <span class="pr">name</span>: <span class="st">"Rayen Chraiet"</span>,</div>
                   <div class="code-line"><span class="ln">3</span>  <span class="pr">title</span>: <span class="st">"Full Stack Developer"</span>,</div>
                   <div class="code-line"><span class="ln">4</span>  <span class="pr">location</span>: <span class="st">"Tunisia 🇹🇳"</span>,</div>
-                  <div class="code-line"><span class="ln">5</span>  <span class="pr">skills</span>: [</div>
-                  <div class="code-line"><span class="ln">6</span>    <span class="st">"React"</span>, <span class="st">"Node.js"</span>,</div>
-                  <div class="code-line"><span class="ln">7</span>    <span class="st">"TypeScript"</span>, <span class="st">"Python"</span>,</div>
-                  <div class="code-line"><span class="ln">8</span>  ],</div>
-                  <div class="code-line"><span class="ln">9</span>  <span class="fn">build</span>: () =&gt; <span class="st">"the future"</span>,</div>
-                  <div class="code-line"><span class="ln">10</span>};</div>
+                  <div class="code-line"><span class="ln">5</span>  <span class="pr">skills</span>: [<span class="st">"React"</span>, <span class="st">"Node.js"</span>,</div>
+                  <div class="code-line"><span class="ln">6</span>    <span class="st">"TypeScript"</span>, <span class="st">"Python"</span>],</div>
+                  <div class="code-line"><span class="ln">7</span>  <span class="fn">build</span>: () =&gt; <span class="st">"the future"</span>,</div>
+                  <div class="code-line"><span class="ln">8</span>};</div>
                 </div>
               </div>
             </div>
@@ -233,7 +228,6 @@
         <div class="page-inner">
           <div class="section-tag scroll-reveal"><span>//</span> <span data-i18n="scan.tag">identity scan</span></div>
           <h2 class="section-heading scroll-reveal" data-i18n="scan.heading">Developer <span class="gradient-text">Scan</span></h2>
-
           <div class="scanner-container scroll-reveal" style="--d:.1s">
             <div class="scanner-frame">
               <div class="scan-corner scan-tl"></div>
@@ -241,55 +235,28 @@
               <div class="scan-corner scan-bl"></div>
               <div class="scan-corner scan-br"></div>
               <div class="scan-line"></div>
-
               <div class="scan-content">
                 <div class="scan-avatar">
                   <div class="avatar-ring"></div>
-                  <div class="avatar-inner">
-                    <span class="avatar-initials">RC</span>
-                  </div>
+                  <div class="avatar-inner"><img src="public/rvn.png" alt="Rayen Chraiet" class="avatar-photo"/></div>
                   <div class="avatar-pulse"></div>
                 </div>
-
                 <div class="hud-panel hud-left">
-                  <div class="hud-group">
-                    <span class="hud-label">COORDINATES</span>
-                    <span class="hud-value">36.8065°N, 10.1815°E</span>
-                  </div>
-                  <div class="hud-group">
-                    <span class="hud-label" data-i18n="scan.location">LOCATION</span>
-                    <span class="hud-value">TUNISIA 🇹🇳</span>
-                  </div>
-                  <div class="hud-group">
-                    <span class="hud-label" data-i18n="scan.age_label">AGE</span>
-                    <span class="hud-value">25</span>
-                  </div>
+                  <div class="hud-group"><span class="hud-label">COORDINATES</span><span class="hud-value">36.8065°N, 10.1815°E</span></div>
+                  <div class="hud-group"><span class="hud-label" data-i18n="scan.location">LOCATION</span><span class="hud-value">TUNISIA 🇹🇳</span></div>
+                  <div class="hud-group"><span class="hud-label" data-i18n="scan.age_label">AGE</span><span class="hud-value">25</span></div>
                 </div>
-
                 <div class="hud-panel hud-right">
-                  <div class="hud-group">
-                    <span class="hud-label" data-i18n="scan.status">STATUS</span>
-                    <span class="hud-value hud-green">● <span data-i18n="scan.available">AVAILABLE</span></span>
-                  </div>
-                  <div class="hud-group">
-                    <span class="hud-label" data-i18n="scan.level">LEVEL</span>
-                    <span class="hud-value hud-cyan" data-i18n="scan.expert">EXPERT</span>
-                  </div>
-                  <div class="hud-group">
-                    <span class="hud-label" data-i18n="scan.clearance">CLEARANCE</span>
-                    <span class="hud-value hud-pink" data-i18n="scan.full_access">FULL ACCESS</span>
-                  </div>
+                  <div class="hud-group"><span class="hud-label" data-i18n="scan.status">STATUS</span><span class="hud-value hud-green">● <span data-i18n="scan.available">AVAILABLE</span></span></div>
+                  <div class="hud-group"><span class="hud-label" data-i18n="scan.level">LEVEL</span><span class="hud-value hud-cyan" data-i18n="scan.expert">EXPERT</span></div>
+                  <div class="hud-group"><span class="hud-label" data-i18n="scan.clearance">CLEARANCE</span><span class="hud-value hud-gold" data-i18n="scan.full_access">FULL ACCESS</span></div>
                 </div>
               </div>
-
               <div class="scan-readout">
-                <div class="readout-bar">
-                  <div class="readout-fill"></div>
-                </div>
+                <div class="readout-bar"><div class="readout-fill"></div></div>
                 <span class="scan-confirm" data-i18n="scan.confirmed">✓ IDENTITY CONFIRMED</span>
                 <span class="scan-name">RAYEN CHRAIET // FULL STACK DEVELOPER</span>
               </div>
-
               <div class="scan-skills-hud">
                 <div class="hud-skill"><span>React</span><div class="hud-bar"><div class="hud-bar-fill" style="--w:95%"></div></div><span class="hud-pct">95%</span></div>
                 <div class="hud-skill"><span>Node.js</span><div class="hud-bar"><div class="hud-bar-fill" style="--w:90%"></div></div><span class="hud-pct">90%</span></div>
@@ -306,16 +273,15 @@
         <div class="page-inner">
           <div class="section-tag scroll-reveal"><span>//</span> <span data-i18n="about.tag">who I am</span></div>
           <h2 class="section-heading scroll-reveal" data-i18n="about.heading">About <span class="gradient-text">Me</span></h2>
-
           <div class="about-grid">
             <div class="about-text-col scroll-reveal" style="--d:.1s">
               <div class="about-quote">
-                <span class="quote-mark">"</span>
+                <span class="quote-mark">&ldquo;</span>
                 <span data-i18n="about.quote">I turn ideas into real-world products through clean code and creative design.</span>
-                <span class="quote-mark">"</span>
+                <span class="quote-mark">&rdquo;</span>
               </div>
               <p data-i18n="about.p1">I'm a passionate Full Stack Developer from <strong>Tunisia 🇹🇳</strong>. I love crafting modern, responsive, and high-performance web applications.</p>
-              <p data-i18n="about.p2">Whether it's building RESTful APIs, designing interactive UIs, or optimizing databases — I bring creativity and precision to every project.</p>
+              <p data-i18n="about.p2">Whether it's building RESTful APIs, designing interactive UIs, or optimizing databases &mdash; I bring creativity and precision to every project.</p>
               <div class="about-highlights">
                 <div class="highlight"><i data-lucide="rocket" class="highlight-icon"></i><div><strong data-i18n="about.h1">Fast Learner</strong><br/><span class="muted" data-i18n="about.h1d">Always exploring new tech</span></div></div>
                 <div class="highlight"><i data-lucide="target" class="highlight-icon"></i><div><strong data-i18n="about.h2">Detail Oriented</strong><br/><span class="muted" data-i18n="about.h2d">Pixel-perfect results</span></div></div>
@@ -341,12 +307,12 @@
                 </ul>
               </div>
               <div class="info-card glass-card scroll-reveal" style="--d:.4s">
-                <h3 class="card-title"><i data-lucide="languages" class="card-icon neon-pink-c"></i><span data-i18n="about.languages">Languages</span></h3>
+                <h3 class="card-title"><i data-lucide="languages" class="card-icon gold-c"></i><span data-i18n="about.languages">Languages</span></h3>
                 <div class="lang-bars">
                   <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇹🇳</span><span class="lang-bar-name" data-i18n="lang.arabic">Arabic</span><span class="lang-bar-level" data-i18n="lang.native">Native</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:100%;--c:var(--neon-green)"></div></div></div>
                   <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇫🇷</span><span class="lang-bar-name" data-i18n="lang.french">French</span><span class="lang-bar-level" data-i18n="lang.fluent">Fluent</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:90%;--c:var(--neon-cyan)"></div></div></div>
                   <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇬🇧</span><span class="lang-bar-name" data-i18n="lang.english">English</span><span class="lang-bar-level" data-i18n="lang.advanced">Advanced</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:80%;--c:var(--neon-purple)"></div></div></div>
-                  <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇩🇪</span><span class="lang-bar-name" data-i18n="lang.german">German</span><span class="lang-bar-level" data-i18n="lang.basic">Basic</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:40%;--c:var(--neon-orange)"></div></div></div>
+                  <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇩🇪</span><span class="lang-bar-name" data-i18n="lang.german">German</span><span class="lang-bar-level" data-i18n="lang.basic">Basic</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:40%;--c:var(--gold)"></div></div></div>
                 </div>
               </div>
             </div>
@@ -360,46 +326,55 @@
           <div class="section-tag scroll-reveal"><span>#</span> <span data-i18n="skills.tag">what I use</span></div>
           <h2 class="section-heading scroll-reveal" data-i18n="skills.heading">My <span class="gradient-text">Skills</span></h2>
 
+          <!-- RADIAL METERS -->
+          <div class="skills-radial-grid scroll-reveal" style="--d:.1s">
+            <div class="skill-radial" data-offset="16.96">
+              <svg viewBox="0 0 120 120" class="skill-ring-svg"><circle cx="60" cy="60" r="54" class="skill-ring-bg"/><circle cx="60" cy="60" r="54" class="skill-ring-fill" style="--offset:16.96;--c:var(--neon-cyan)"/></svg>
+              <div class="skill-radial-info"><span class="skill-radial-pct">95%</span><span class="skill-radial-name">JavaScript</span></div>
+            </div>
+            <div class="skill-radial" data-offset="27.14">
+              <svg viewBox="0 0 120 120" class="skill-ring-svg"><circle cx="60" cy="60" r="54" class="skill-ring-bg"/><circle cx="60" cy="60" r="54" class="skill-ring-fill" style="--offset:27.14;--c:var(--neon-green)"/></svg>
+              <div class="skill-radial-info"><span class="skill-radial-pct">92%</span><span class="skill-radial-name">React</span></div>
+            </div>
+            <div class="skill-radial" data-offset="33.93">
+              <svg viewBox="0 0 120 120" class="skill-ring-svg"><circle cx="60" cy="60" r="54" class="skill-ring-bg"/><circle cx="60" cy="60" r="54" class="skill-ring-fill" style="--offset:33.93;--c:var(--neon-pink)"/></svg>
+              <div class="skill-radial-info"><span class="skill-radial-pct">90%</span><span class="skill-radial-name">CSS</span></div>
+            </div>
+            <div class="skill-radial" data-offset="40.71">
+              <svg viewBox="0 0 120 120" class="skill-ring-svg"><circle cx="60" cy="60" r="54" class="skill-ring-bg"/><circle cx="60" cy="60" r="54" class="skill-ring-fill" style="--offset:40.71;--c:var(--neon-purple)"/></svg>
+              <div class="skill-radial-info"><span class="skill-radial-pct">88%</span><span class="skill-radial-name">Node.js</span></div>
+            </div>
+            <div class="skill-radial" data-offset="50.89">
+              <svg viewBox="0 0 120 120" class="skill-ring-svg"><circle cx="60" cy="60" r="54" class="skill-ring-bg"/><circle cx="60" cy="60" r="54" class="skill-ring-fill" style="--offset:50.89;--c:var(--gold)"/></svg>
+              <div class="skill-radial-info"><span class="skill-radial-pct">85%</span><span class="skill-radial-name">TypeScript</span></div>
+            </div>
+            <div class="skill-radial" data-offset="67.86">
+              <svg viewBox="0 0 120 120" class="skill-ring-svg"><circle cx="60" cy="60" r="54" class="skill-ring-bg"/><circle cx="60" cy="60" r="54" class="skill-ring-fill" style="--offset:67.86;--c:var(--neon-orange)"/></svg>
+              <div class="skill-radial-info"><span class="skill-radial-pct">80%</span><span class="skill-radial-name">Python</span></div>
+            </div>
+          </div>
+
+          <!-- SKILL CATEGORY CARDS -->
           <div class="skills-grid">
-            <div class="skill-card glass-card scroll-reveal" style="--d:.1s">
+            <div class="skill-card glass-card scroll-reveal" style="--d:.2s">
               <div class="skill-card-glow"></div>
               <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-cyan)"><i data-lucide="code-2"></i></div><h3 data-i18n="skills.languages">Languages</h3></div>
               <div class="skill-pills"><span class="pill" style="--i:0">JavaScript</span><span class="pill" style="--i:1">TypeScript</span><span class="pill" style="--i:2">Python</span><span class="pill" style="--i:3">C++</span><span class="pill" style="--i:4">Java</span><span class="pill" style="--i:5">C#</span><span class="pill" style="--i:6">SQL</span></div>
-              <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">JavaScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:95%;--c:var(--neon-cyan)"></div></div><span class="s-bar-pct">95%</span></div>
-                <div class="s-bar"><span class="s-bar-label">TypeScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:var(--neon-purple)"></div></div><span class="s-bar-pct">85%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Python</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:80%;--c:var(--neon-pink)"></div></div><span class="s-bar-pct">80%</span></div>
-              </div>
-            </div>
-            <div class="skill-card glass-card scroll-reveal" style="--d:.2s">
-              <div class="skill-card-glow"></div>
-              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-green)"><i data-lucide="blocks"></i></div><h3 data-i18n="skills.frameworks">Frameworks</h3></div>
-              <div class="skill-pills"><span class="pill" style="--i:0">React</span><span class="pill" style="--i:1">Node.js</span><span class="pill" style="--i:2">Express</span><span class="pill" style="--i:3">Next.js</span><span class="pill" style="--i:4">Tailwind</span></div>
-              <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">React</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:92%;--c:var(--neon-green)"></div></div><span class="s-bar-pct">92%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Node.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:88%;--c:var(--neon-cyan)"></div></div><span class="s-bar-pct">88%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Next.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:75%;--c:var(--neon-purple)"></div></div><span class="s-bar-pct">75%</span></div>
-              </div>
             </div>
             <div class="skill-card glass-card scroll-reveal" style="--d:.3s">
               <div class="skill-card-glow"></div>
-              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-orange)"><i data-lucide="settings"></i></div><h3 data-i18n="skills.tools">Tools &amp; DevOps</h3></div>
-              <div class="skill-pills"><span class="pill" style="--i:0">Git</span><span class="pill" style="--i:1">Docker</span><span class="pill" style="--i:2">AWS</span><span class="pill" style="--i:3">MongoDB</span><span class="pill" style="--i:4">PostgreSQL</span><span class="pill" style="--i:5">CI/CD</span></div>
-              <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">Git</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:93%;--c:var(--neon-orange)"></div></div><span class="s-bar-pct">93%</span></div>
-                <div class="s-bar"><span class="s-bar-label">MongoDB</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:var(--neon-green)"></div></div><span class="s-bar-pct">85%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Docker</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:72%;--c:var(--neon-cyan)"></div></div><span class="s-bar-pct">72%</span></div>
-              </div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-green)"><i data-lucide="blocks"></i></div><h3 data-i18n="skills.frameworks">Frameworks</h3></div>
+              <div class="skill-pills"><span class="pill" style="--i:0">React</span><span class="pill" style="--i:1">Node.js</span><span class="pill" style="--i:2">Express</span><span class="pill" style="--i:3">Next.js</span><span class="pill" style="--i:4">Tailwind</span></div>
             </div>
             <div class="skill-card glass-card scroll-reveal" style="--d:.4s">
               <div class="skill-card-glow"></div>
-              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-pink)"><i data-lucide="palette"></i></div><h3 data-i18n="skills.design">Design &amp; Software</h3></div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-orange)"><i data-lucide="settings"></i></div><h3 data-i18n="skills.tools">Tools &amp; DevOps</h3></div>
+              <div class="skill-pills"><span class="pill" style="--i:0">Git</span><span class="pill" style="--i:1">Docker</span><span class="pill" style="--i:2">AWS</span><span class="pill" style="--i:3">MongoDB</span><span class="pill" style="--i:4">PostgreSQL</span><span class="pill" style="--i:5">CI/CD</span></div>
+            </div>
+            <div class="skill-card glass-card scroll-reveal" style="--d:.5s">
+              <div class="skill-card-glow"></div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--gold)"><i data-lucide="palette"></i></div><h3 data-i18n="skills.design">Design &amp; Software</h3></div>
               <div class="skill-pills"><span class="pill" style="--i:0">VS Code</span><span class="pill" style="--i:1">Figma</span><span class="pill" style="--i:2">Photoshop</span><span class="pill" style="--i:3">Linux</span><span class="pill" style="--i:4">Postman</span></div>
-              <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">VS Code</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:96%;--c:var(--neon-pink)"></div></div><span class="s-bar-pct">96%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Figma</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:78%;--c:var(--neon-purple)"></div></div><span class="s-bar-pct">78%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Linux</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:82%;--c:var(--neon-orange)"></div></div><span class="s-bar-pct">82%</span></div>
-              </div>
             </div>
           </div>
         </div>
@@ -458,7 +433,6 @@
           <h2 class="section-heading scroll-reveal" data-i18n="proj.heading">My <span class="gradient-text">Projects</span></h2>
           <p class="section-sub scroll-reveal" data-i18n="proj.sub">A curated showcase of projects that define my craft.</p>
           <div class="projects-grid">
-            <!-- FEATURED: SantecAI -->
             <article class="proj-card featured scroll-reveal" style="--d:.1s;--accent-c:var(--neon-green)">
               <div class="proj-visual" style="--g:linear-gradient(135deg,#10b981,#06b6d4)">
                 <i data-lucide="heart-pulse" class="proj-icon"></i>
@@ -478,59 +452,98 @@
                 <i data-lucide="globe" class="proj-icon"></i>
                 <div class="proj-links">
                   <a href="https://github.com/chraietrayen/portfilio" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                  <a href="#" class="proj-link-btn accent"><i data-lucide="external-link"></i> Live</a>
+                  <a href="https://portfilio-one.vercel.app" target="_blank" class="proj-link-btn accent"><i data-lucide="external-link"></i> Live</a>
                 </div>
               </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p1t">Portfolio Website</h3>
-                <p data-i18n="proj.p1d">Modern animated portfolio with cinematic design, particles, glassmorphism, and silky-smooth animations.</p>
-                <div class="proj-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div>
-              </div>
+              <div class="proj-body"><h3 data-i18n="proj.p1t">Portfolio Website</h3><p data-i18n="proj.p1d">Modern cinematic portfolio with particles, glassmorphism, HUD scanner, and silky-smooth animations.</p><div class="proj-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div></div>
             </article>
             <article class="proj-card scroll-reveal" style="--d:.3s;--accent-c:var(--neon-green)">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#00f0ff,#b24dff)">
-                <i data-lucide="shopping-cart" class="proj-icon"></i>
-                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p2t">E-Commerce Platform</h3>
-                <p data-i18n="proj.p2d">Full-featured online store with cart, checkout, auth, admin dashboard, and real-time inventory.</p>
-                <div class="proj-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
-              </div>
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#00f0ff,#b24dff)"><i data-lucide="shopping-cart" class="proj-icon"></i><div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div></div>
+              <div class="proj-body"><h3 data-i18n="proj.p2t">E-Commerce Platform</h3><p data-i18n="proj.p2d">Full-featured online store with cart, checkout, auth, admin dashboard, and real-time inventory.</p><div class="proj-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div></div>
             </article>
             <article class="proj-card scroll-reveal" style="--d:.4s;--accent-c:var(--neon-purple)">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#ff6b35,#ff2d78)">
-                <i data-lucide="message-circle" class="proj-icon"></i>
-                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p3t">Real-Time Chat App</h3>
-                <p data-i18n="proj.p3d">WebSocket messaging with rooms, file sharing, typing indicators, and end-to-end encryption.</p>
-                <div class="proj-tech"><span>Socket.io</span><span>Express</span><span>React</span><span>Redis</span></div>
-              </div>
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#ff6b35,#ff2d78)"><i data-lucide="message-circle" class="proj-icon"></i><div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div></div>
+              <div class="proj-body"><h3 data-i18n="proj.p3t">Real-Time Chat App</h3><p data-i18n="proj.p3d">WebSocket messaging with rooms, file sharing, typing indicators, and end-to-end encryption.</p><div class="proj-tech"><span>Socket.io</span><span>Express</span><span>React</span><span>Redis</span></div></div>
             </article>
             <article class="proj-card scroll-reveal" style="--d:.5s;--accent-c:var(--neon-orange)">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#b24dff,#00f0ff)">
-                <i data-lucide="kanban" class="proj-icon"></i>
-                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p4t">Task Management</h3>
-                <p data-i18n="proj.p4d">Kanban board with drag-and-drop, team collaboration, progress tracking, and analytics.</p>
-                <div class="proj-tech"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div>
-              </div>
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#b24dff,#00f0ff)"><i data-lucide="kanban" class="proj-icon"></i><div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div></div>
+              <div class="proj-body"><h3 data-i18n="proj.p4t">Task Management</h3><p data-i18n="proj.p4d">Kanban board with drag-and-drop, team collaboration, progress tracking, and analytics.</p><div class="proj-tech"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div></div>
             </article>
-            <article class="proj-card scroll-reveal" style="--d:.6s;--accent-c:var(--neon-pink)">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#00f0ff,#00ff88)">
-                <i data-lucide="bot" class="proj-icon"></i>
-                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p5t">AI Content Generator</h3>
-                <p data-i18n="proj.p5d">AI-powered creation tool using OpenAI APIs for blog posts, social media, and marketing copy.</p>
-                <div class="proj-tech"><span>Python</span><span>FastAPI</span><span>OpenAI</span><span>React</span></div>
-              </div>
+            <article class="proj-card scroll-reveal" style="--d:.6s;--accent-c:var(--gold)">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#00f0ff,#00ff88)"><i data-lucide="bot" class="proj-icon"></i><div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div></div>
+              <div class="proj-body"><h3 data-i18n="proj.p5t">AI Content Generator</h3><p data-i18n="proj.p5d">AI-powered creation tool using OpenAI APIs for blog posts, social media, and marketing copy.</p><div class="proj-tech"><span>Python</span><span>FastAPI</span><span>OpenAI</span><span>React</span></div></div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== HOBBIES ==================== -->
+      <section id="hobbies" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>🎮</span> <span data-i18n="hobby.tag">my passions</span></div>
+          <h2 class="section-heading scroll-reveal" data-i18n="hobby.heading">My <span class="gradient-text">Hobbies</span></h2>
+          <p class="section-sub scroll-reveal" data-i18n="hobby.sub">What I do when I'm not coding.</p>
+
+          <div class="hobbies-duo">
+            <!-- GAMING CARD -->
+            <div class="hobby-card hobby-gaming glass-card scroll-reveal" style="--d:.1s">
+              <div class="hobby-media">
+                <video class="hobby-video" autoplay loop muted playsinline>
+                  <source src="public/valo.mp4" type="video/mp4"/>
+                </video>
+                <div class="hobby-media-overlay"></div>
+                <div class="crosshair-overlay">
+                  <div class="crosshair-h"></div>
+                  <div class="crosshair-v"></div>
+                  <div class="crosshair-dot"></div>
+                </div>
+                <div class="hobby-badge"><span class="hv-live-dot"></span> <span data-i18n="hobby.gameplay">GAMEPLAY</span></div>
+              </div>
+              <div class="hobby-content">
+                <div class="hobby-title-row">
+                  <h3 class="hobby-name neon-pink-c">VALORANT</h3>
+                  <span class="hobby-tag-badge" data-i18n="hobby.fps">FPS</span>
+                </div>
+                <p class="hobby-desc" data-i18n="hobby.valo_desc">Competitive FPS gaming — tactical shooter with precise aim and team strategy. Nothing beats a clutch ace!</p>
+                <div class="hobby-stats">
+                  <div class="hobby-stat"><span class="hobby-stat-icon">🎯</span><div><strong data-i18n="hobby.agent">Favorite Agent</strong><span>Jett / Reyna</span></div></div>
+                  <div class="hobby-stat"><span class="hobby-stat-icon">⚔️</span><div><strong data-i18n="hobby.mode">Game Mode</strong><span>Competitive</span></div></div>
+                  <div class="hobby-stat"><span class="hobby-stat-icon">🏆</span><div><strong data-i18n="hobby.playstyle">Playstyle</strong><span data-i18n="hobby.aggressive">Aggressive Duelist</span></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MUSIC CARD -->
+            <div class="hobby-card hobby-music glass-card scroll-reveal" style="--d:.2s">
+              <div class="hobby-media">
+                <img src="public/DaBaby-Widescreen.jpg" alt="DaBaby" class="hobby-media-img"/>
+                <div class="hobby-media-overlay hobby-music-overlay"></div>
+                <div class="vinyl-wrap">
+                  <div class="vinyl-disc"><div class="vinyl-hole"></div></div>
+                </div>
+                <div class="equalizer-overlay">
+                  <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
+                </div>
+                <div class="hobby-badge"><span class="hv-live-dot green"></span> NOW PLAYING</div>
+              </div>
+              <div class="hobby-content">
+                <div class="hobby-title-row">
+                  <h3 class="hobby-name gradient-text">DaBaby</h3>
+                  <span class="hobby-tag-badge" data-i18n="music.genre">Hip-Hop / Rap</span>
+                </div>
+                <p class="hobby-desc hobby-music-quote">"Music keeps me focused while coding."</p>
+                <div class="mini-tracks">
+                  <div class="mini-track track-playable" data-track="public/dababy-goin-baby.mp3">
+                    <span class="mini-track-play"><i data-lucide="play" class="mtp-icon"></i></span>
+                    <div class="mini-track-info"><span class="track-name">Goin Baby</span><span class="track-artist">DaBaby</span></div>
+                    <span class="mini-track-badge">MP3</span>
+                  </div>
+                  <div class="mini-track"><span class="mini-track-num">02</span><div class="mini-track-info"><span class="track-name">ROCKSTAR</span><span class="track-artist">ft. Roddy Ricch</span></div><span class="mini-track-dur">3:01</span></div>
+                  <div class="mini-track"><span class="mini-track-num">03</span><div class="mini-track-info"><span class="track-name">BOP</span><span class="track-artist">DaBaby</span></div><span class="mini-track-dur">2:47</span></div>
+                  <div class="mini-track"><span class="mini-track-num">04</span><div class="mini-track-info"><span class="track-name">Suge</span><span class="track-artist">DaBaby</span></div><span class="mini-track-dur">2:42</span></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -542,7 +555,7 @@
           <h2 class="section-heading scroll-reveal" data-i18n="contact.heading">Get in <span class="gradient-text">Touch</span></h2>
           <div class="contact-grid">
             <div class="contact-left scroll-reveal" style="--d:.1s">
-              <h3 class="contact-cta-text" data-i18n="contact.cta">Have a project in mind?<br/><span class="gradient-text">Let's build it together.</span></h3>
+              <h3 class="contact-cta-text" data-i18n="contact.cta">Let's build something<br/><span class="gradient-text">legendary together.</span></h3>
               <div class="contact-links">
                 <a href="mailto:rayenchraiet2000@gmail.com" class="c-link glass-card"><i data-lucide="mail" class="c-link-icon"></i><div><strong>Email</strong><span>rayenchraiet2000@gmail.com</span></div></a>
                 <a href="tel:+21694599198" class="c-link glass-card"><i data-lucide="phone" class="c-link-icon"></i><div><strong data-i18n="about.phone_l">Phone</strong><span>+216 94 599 198</span></div></a>
@@ -553,7 +566,7 @@
                   <div class="qr-header"><i data-lucide="scan-line" class="qr-header-icon"></i><h4 data-i18n="contact.qr_title">Scan to Connect</h4></div>
                   <div class="qr-codes">
                     <div class="qr-item"><div id="qr-portfolio" class="qr-code"></div><span class="qr-label" data-i18n="contact.qr_visit">Visit Portfolio</span></div>
-                    <div class="qr-item"><div id="qr-vcard" class="qr-code"></div><span class="qr-label" data-i18n="contact.qr_save">Save Contact</span><span class="qr-sublabel" data-i18n="contact.qr_vcard">vCard</span></div>
+                    <div class="qr-item"><div id="qr-vcard" class="qr-code"></div><span class="qr-label" data-i18n="contact.qr_save">Save Contact</span></div>
                   </div>
                 </div>
               </div>
@@ -588,6 +601,29 @@
 
     </div>
   </main>
+</div>
+
+<!-- FLOATING MUSIC PLAYER -->
+<div id="music-player" class="music-player">
+  <audio id="audio-el" preload="metadata"><source src="public/dababy-goin-baby.mp3" type="audio/mpeg"/></audio>
+  <button id="player-toggle" class="player-toggle" aria-label="Toggle music player">
+    <div class="player-eq"><span class="peq-bar"></span><span class="peq-bar"></span><span class="peq-bar"></span></div>
+  </button>
+  <div id="player-panel" class="player-panel glass-card">
+    <div class="player-art"><img src="public/DaBaby-Widescreen.jpg" alt="DaBaby" class="player-art-img"/></div>
+    <div class="player-details"><span class="player-track-name">Goin Baby</span><span class="player-track-artist">DaBaby</span></div>
+    <div class="player-progress">
+      <div class="player-progress-bar" id="player-progress-bar"><div class="player-progress-fill" id="player-progress-fill"></div></div>
+      <div class="player-times"><span id="player-current">0:00</span><span id="player-duration">0:00</span></div>
+    </div>
+    <div class="player-controls">
+      <button id="player-play" class="player-ctrl-btn player-play-btn" aria-label="Play"><i data-lucide="play" class="play-icon"></i><i data-lucide="pause" class="pause-icon"></i></button>
+    </div>
+    <div class="player-volume">
+      <i data-lucide="volume-2" class="vol-icon"></i>
+      <input type="range" id="player-vol" class="player-vol-slider" min="0" max="100" value="60"/>
+    </div>
+  </div>
 </div>
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
