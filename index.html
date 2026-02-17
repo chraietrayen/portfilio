@@ -1,15 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" dir="ltr">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Rayen Chraiet — Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Rayen Chraiet — Full Stack Developer specializing in modern web technologies."/>
-  <meta name="theme-color" content="#0a1628"/>
+  <meta name="description" content="Portfolio of Rayen Chraiet — Full Stack Developer. GTA VI inspired cinematic design."/>
+  <meta name="theme-color" content="#050510"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
@@ -31,7 +31,7 @@
 <!-- NOISE -->
 <div class="noise"></div>
 
-<!-- AURORA -->
+<!-- NEON AURORA -->
 <div class="aurora">
   <div class="aurora-blob aurora-1"></div>
   <div class="aurora-blob aurora-2"></div>
@@ -70,6 +70,12 @@
         <span class="nav-label" data-i18n="nav.home">Home</span>
         <span class="nav-indicator"></span>
       </a>
+      <a href="#scanner" class="nav-link" data-section="scanner">
+        <div class="nav-link-bg"></div>
+        <i data-lucide="scan-line" class="nav-icon"></i>
+        <span class="nav-label" data-i18n="nav.scanner">Scanner</span>
+        <span class="nav-indicator"></span>
+      </a>
       <a href="#about" class="nav-link" data-section="about">
         <div class="nav-link-bg"></div>
         <i data-lucide="user" class="nav-icon"></i>
@@ -80,12 +86,6 @@
         <div class="nav-link-bg"></div>
         <i data-lucide="zap" class="nav-icon"></i>
         <span class="nav-label" data-i18n="nav.skills">Skills</span>
-        <span class="nav-indicator"></span>
-      </a>
-      <a href="#education" class="nav-link" data-section="education">
-        <div class="nav-link-bg"></div>
-        <i data-lucide="graduation-cap" class="nav-icon"></i>
-        <span class="nav-label" data-i18n="nav.education">Education</span>
         <span class="nav-indicator"></span>
       </a>
       <a href="#experience" class="nav-link" data-section="experience">
@@ -110,12 +110,10 @@
 
     <!-- SIDEBAR CONTROLS -->
     <div class="sidebar-controls">
-      <!-- Theme Toggle -->
       <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
         <i data-lucide="sun" class="icon-sun"></i>
         <i data-lucide="moon" class="icon-moon"></i>
       </button>
-      <!-- Language Switcher -->
       <div class="lang-switcher" id="lang-switcher">
         <button class="control-btn lang-btn" id="lang-btn" aria-label="Language">
           <i data-lucide="globe" class="lang-globe"></i>
@@ -167,7 +165,7 @@
             </div>
             <h1 class="hero-title anim-up d1">
               <span class="hero-line"><span class="hero-word" data-i18n="home.greeting">Hi, I'm</span></span>
-              <span class="hero-line"><span class="hero-word hero-name-text">Rayen<span class="hero-accent">.</span></span></span>
+              <span class="hero-line"><span class="hero-name-text neon-text">RAYEN<span class="hero-accent">.</span></span></span>
             </h1>
             <p class="hero-desc anim-up d2" data-i18n="home.desc">I build exceptional digital experiences. Specializing in full-stack development with a passion for clean code, stunning interfaces, and seamless user experiences.</p>
             <div class="hero-cta anim-up d3">
@@ -230,6 +228,79 @@
         </div>
       </section>
 
+      <!-- ==================== SCANNER ==================== -->
+      <section id="scanner" class="page">
+        <div class="page-inner">
+          <div class="section-tag scroll-reveal"><span>//</span> <span data-i18n="scan.tag">identity scan</span></div>
+          <h2 class="section-heading scroll-reveal" data-i18n="scan.heading">Developer <span class="gradient-text">Scan</span></h2>
+
+          <div class="scanner-container scroll-reveal" style="--d:.1s">
+            <div class="scanner-frame">
+              <div class="scan-corner scan-tl"></div>
+              <div class="scan-corner scan-tr"></div>
+              <div class="scan-corner scan-bl"></div>
+              <div class="scan-corner scan-br"></div>
+              <div class="scan-line"></div>
+
+              <div class="scan-content">
+                <div class="scan-avatar">
+                  <div class="avatar-ring"></div>
+                  <div class="avatar-inner">
+                    <span class="avatar-initials">RC</span>
+                  </div>
+                  <div class="avatar-pulse"></div>
+                </div>
+
+                <div class="hud-panel hud-left">
+                  <div class="hud-group">
+                    <span class="hud-label">COORDINATES</span>
+                    <span class="hud-value">36.8065°N, 10.1815°E</span>
+                  </div>
+                  <div class="hud-group">
+                    <span class="hud-label" data-i18n="scan.location">LOCATION</span>
+                    <span class="hud-value">TUNISIA 🇹🇳</span>
+                  </div>
+                  <div class="hud-group">
+                    <span class="hud-label" data-i18n="scan.age_label">AGE</span>
+                    <span class="hud-value">25</span>
+                  </div>
+                </div>
+
+                <div class="hud-panel hud-right">
+                  <div class="hud-group">
+                    <span class="hud-label" data-i18n="scan.status">STATUS</span>
+                    <span class="hud-value hud-green">● <span data-i18n="scan.available">AVAILABLE</span></span>
+                  </div>
+                  <div class="hud-group">
+                    <span class="hud-label" data-i18n="scan.level">LEVEL</span>
+                    <span class="hud-value hud-cyan" data-i18n="scan.expert">EXPERT</span>
+                  </div>
+                  <div class="hud-group">
+                    <span class="hud-label" data-i18n="scan.clearance">CLEARANCE</span>
+                    <span class="hud-value hud-pink" data-i18n="scan.full_access">FULL ACCESS</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="scan-readout">
+                <div class="readout-bar">
+                  <div class="readout-fill"></div>
+                </div>
+                <span class="scan-confirm" data-i18n="scan.confirmed">✓ IDENTITY CONFIRMED</span>
+                <span class="scan-name">RAYEN CHRAIET // FULL STACK DEVELOPER</span>
+              </div>
+
+              <div class="scan-skills-hud">
+                <div class="hud-skill"><span>React</span><div class="hud-bar"><div class="hud-bar-fill" style="--w:95%"></div></div><span class="hud-pct">95%</span></div>
+                <div class="hud-skill"><span>Node.js</span><div class="hud-bar"><div class="hud-bar-fill" style="--w:90%"></div></div><span class="hud-pct">90%</span></div>
+                <div class="hud-skill"><span>TypeScript</span><div class="hud-bar"><div class="hud-bar-fill" style="--w:85%"></div></div><span class="hud-pct">85%</span></div>
+                <div class="hud-skill"><span>Python</span><div class="hud-bar"><div class="hud-bar-fill" style="--w:80%"></div></div><span class="hud-pct">80%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ==================== ABOUT ==================== -->
       <section id="about" class="page">
         <div class="page-inner">
@@ -243,60 +314,39 @@
                 <span data-i18n="about.quote">I turn ideas into real-world products through clean code and creative design.</span>
                 <span class="quote-mark">"</span>
               </div>
-              <p data-i18n="about.p1">I'm a passionate Full Stack Developer from <strong>Tunisia 🇹🇳</strong>. I love crafting modern, responsive, and high-performance web applications. I thrive on turning complex problems into elegant solutions using cutting-edge technologies.</p>
-              <p data-i18n="about.p2">Whether it's building RESTful APIs, designing interactive UIs, or optimizing databases — I bring creativity and precision to every project I touch.</p>
+              <p data-i18n="about.p1">I'm a passionate Full Stack Developer from <strong>Tunisia 🇹🇳</strong>. I love crafting modern, responsive, and high-performance web applications.</p>
+              <p data-i18n="about.p2">Whether it's building RESTful APIs, designing interactive UIs, or optimizing databases — I bring creativity and precision to every project.</p>
               <div class="about-highlights">
-                <div class="highlight">
-                  <i data-lucide="rocket" class="highlight-icon"></i>
-                  <div><strong data-i18n="about.h1">Fast Learner</strong><br/><span class="muted" data-i18n="about.h1d">Always exploring new tech</span></div>
-                </div>
-                <div class="highlight">
-                  <i data-lucide="target" class="highlight-icon"></i>
-                  <div><strong data-i18n="about.h2">Detail Oriented</strong><br/><span class="muted" data-i18n="about.h2d">Pixel-perfect results</span></div>
-                </div>
-                <div class="highlight">
-                  <i data-lucide="lightbulb" class="highlight-icon"></i>
-                  <div><strong data-i18n="about.h3">Problem Solver</strong><br/><span class="muted" data-i18n="about.h3d">Creative &amp; logical thinking</span></div>
-                </div>
+                <div class="highlight"><i data-lucide="rocket" class="highlight-icon"></i><div><strong data-i18n="about.h1">Fast Learner</strong><br/><span class="muted" data-i18n="about.h1d">Always exploring new tech</span></div></div>
+                <div class="highlight"><i data-lucide="target" class="highlight-icon"></i><div><strong data-i18n="about.h2">Detail Oriented</strong><br/><span class="muted" data-i18n="about.h2d">Pixel-perfect results</span></div></div>
+                <div class="highlight"><i data-lucide="lightbulb" class="highlight-icon"></i><div><strong data-i18n="about.h3">Problem Solver</strong><br/><span class="muted" data-i18n="about.h3d">Creative &amp; logical thinking</span></div></div>
               </div>
             </div>
             <div class="about-info-col">
               <div class="info-card glass-card scroll-reveal" style="--d:.2s">
-                <h3 class="card-title"><i data-lucide="user-circle" class="card-icon blue"></i><span data-i18n="about.personal">Personal</span></h3>
+                <h3 class="card-title"><i data-lucide="user-circle" class="card-icon neon-cyan-c"></i><span data-i18n="about.personal">Personal</span></h3>
                 <ul class="detail-list">
                   <li><span data-i18n="about.name_l">Name</span><strong>Rayen Chraiet</strong></li>
-                  <li><span data-i18n="about.age_l">Age</span><strong class="accent-b">25</strong></li>
+                  <li><span data-i18n="about.age_l">Age</span><strong class="neon-cyan-c">25</strong></li>
                   <li><span data-i18n="about.location_l">Location</span><strong>Tunisia 🇹🇳</strong></li>
-                  <li><span data-i18n="about.license_l">License</span><strong class="accent-g" data-i18n="about.yes">Yes</strong></li>
+                  <li><span data-i18n="about.license_l">License</span><strong class="neon-green-c" data-i18n="about.yes">Yes</strong></li>
                 </ul>
               </div>
               <div class="info-card glass-card scroll-reveal" style="--d:.3s">
-                <h3 class="card-title"><i data-lucide="phone" class="card-icon green"></i><span data-i18n="about.contact">Contact</span></h3>
+                <h3 class="card-title"><i data-lucide="phone" class="card-icon neon-green-c"></i><span data-i18n="about.contact">Contact</span></h3>
                 <ul class="detail-list">
-                  <li><span>Email</span><a href="mailto:rayenchraiet2000@gmail.com" class="accent-b link-hover">rayenchraiet2000@gmail.com</a></li>
-                  <li><span data-i18n="about.phone_l">Phone</span><a href="tel:+21694599198" class="accent-g link-hover">+216 94 599 198</a></li>
-                  <li><span>GitHub</span><a href="https://github.com/chraietrayen" target="_blank" class="accent-p link-hover">chraietrayen</a></li>
+                  <li><span>Email</span><a href="mailto:rayenchraiet2000@gmail.com" class="neon-cyan-c link-hover">rayenchraiet2000@gmail.com</a></li>
+                  <li><span data-i18n="about.phone_l">Phone</span><a href="tel:+21694599198" class="neon-green-c link-hover">+216 94 599 198</a></li>
+                  <li><span>GitHub</span><a href="https://github.com/chraietrayen" target="_blank" class="neon-purple-c link-hover">chraietrayen</a></li>
                 </ul>
               </div>
               <div class="info-card glass-card scroll-reveal" style="--d:.4s">
-                <h3 class="card-title"><i data-lucide="languages" class="card-icon" style="color:var(--accent-y)"></i><span data-i18n="about.languages">Languages</span></h3>
+                <h3 class="card-title"><i data-lucide="languages" class="card-icon neon-pink-c"></i><span data-i18n="about.languages">Languages</span></h3>
                 <div class="lang-bars">
-                  <div class="lang-bar-item">
-                    <div class="lang-bar-top"><span class="lang-bar-flag">🇹🇳</span><span class="lang-bar-name" data-i18n="lang.arabic">Arabic</span><span class="lang-bar-level" data-i18n="lang.native">Native</span></div>
-                    <div class="lang-bar-track"><div class="lang-bar-fill" style="--w:100%;--c:var(--accent-g)"></div></div>
-                  </div>
-                  <div class="lang-bar-item">
-                    <div class="lang-bar-top"><span class="lang-bar-flag">🇫🇷</span><span class="lang-bar-name" data-i18n="lang.french">French</span><span class="lang-bar-level" data-i18n="lang.fluent">Fluent</span></div>
-                    <div class="lang-bar-track"><div class="lang-bar-fill" style="--w:90%;--c:var(--accent-b)"></div></div>
-                  </div>
-                  <div class="lang-bar-item">
-                    <div class="lang-bar-top"><span class="lang-bar-flag">🇬🇧</span><span class="lang-bar-name" data-i18n="lang.english">English</span><span class="lang-bar-level" data-i18n="lang.advanced">Advanced</span></div>
-                    <div class="lang-bar-track"><div class="lang-bar-fill" style="--w:80%;--c:var(--accent-p)"></div></div>
-                  </div>
-                  <div class="lang-bar-item">
-                    <div class="lang-bar-top"><span class="lang-bar-flag">🇩🇪</span><span class="lang-bar-name" data-i18n="lang.german">German</span><span class="lang-bar-level" data-i18n="lang.basic">Basic</span></div>
-                    <div class="lang-bar-track"><div class="lang-bar-fill" style="--w:40%;--c:var(--accent-y)"></div></div>
-                  </div>
+                  <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇹🇳</span><span class="lang-bar-name" data-i18n="lang.arabic">Arabic</span><span class="lang-bar-level" data-i18n="lang.native">Native</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:100%;--c:var(--neon-green)"></div></div></div>
+                  <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇫🇷</span><span class="lang-bar-name" data-i18n="lang.french">French</span><span class="lang-bar-level" data-i18n="lang.fluent">Fluent</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:90%;--c:var(--neon-cyan)"></div></div></div>
+                  <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇬🇧</span><span class="lang-bar-name" data-i18n="lang.english">English</span><span class="lang-bar-level" data-i18n="lang.advanced">Advanced</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:80%;--c:var(--neon-purple)"></div></div></div>
+                  <div class="lang-bar-item"><div class="lang-bar-top"><span class="lang-bar-flag">🇩🇪</span><span class="lang-bar-name" data-i18n="lang.german">German</span><span class="lang-bar-level" data-i18n="lang.basic">Basic</span></div><div class="lang-bar-track"><div class="lang-bar-fill" style="--w:40%;--c:var(--neon-orange)"></div></div></div>
                 </div>
               </div>
             </div>
@@ -313,128 +363,42 @@
           <div class="skills-grid">
             <div class="skill-card glass-card scroll-reveal" style="--d:.1s">
               <div class="skill-card-glow"></div>
-              <div class="skill-header">
-                <div class="skill-icon-wrap" style="--c:#60a5fa"><i data-lucide="code-2"></i></div>
-                <h3 data-i18n="skills.languages">Languages</h3>
-              </div>
-              <div class="skill-pills">
-                <span class="pill" style="--i:0">JavaScript</span>
-                <span class="pill" style="--i:1">TypeScript</span>
-                <span class="pill" style="--i:2">Python</span>
-                <span class="pill" style="--i:3">C++</span>
-                <span class="pill" style="--i:4">Java</span>
-                <span class="pill" style="--i:5">C#</span>
-                <span class="pill" style="--i:6">SQL</span>
-              </div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-cyan)"><i data-lucide="code-2"></i></div><h3 data-i18n="skills.languages">Languages</h3></div>
+              <div class="skill-pills"><span class="pill" style="--i:0">JavaScript</span><span class="pill" style="--i:1">TypeScript</span><span class="pill" style="--i:2">Python</span><span class="pill" style="--i:3">C++</span><span class="pill" style="--i:4">Java</span><span class="pill" style="--i:5">C#</span><span class="pill" style="--i:6">SQL</span></div>
               <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">JavaScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:95%;--c:#60a5fa"></div></div><span class="s-bar-pct">95%</span></div>
-                <div class="s-bar"><span class="s-bar-label">TypeScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:#818cf8"></div></div><span class="s-bar-pct">85%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Python</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:80%;--c:#a78bfa"></div></div><span class="s-bar-pct">80%</span></div>
+                <div class="s-bar"><span class="s-bar-label">JavaScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:95%;--c:var(--neon-cyan)"></div></div><span class="s-bar-pct">95%</span></div>
+                <div class="s-bar"><span class="s-bar-label">TypeScript</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:var(--neon-purple)"></div></div><span class="s-bar-pct">85%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Python</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:80%;--c:var(--neon-pink)"></div></div><span class="s-bar-pct">80%</span></div>
               </div>
             </div>
-
             <div class="skill-card glass-card scroll-reveal" style="--d:.2s">
               <div class="skill-card-glow"></div>
-              <div class="skill-header">
-                <div class="skill-icon-wrap" style="--c:#34d399"><i data-lucide="blocks"></i></div>
-                <h3 data-i18n="skills.frameworks">Frameworks</h3>
-              </div>
-              <div class="skill-pills">
-                <span class="pill" style="--i:0">React</span>
-                <span class="pill" style="--i:1">Node.js</span>
-                <span class="pill" style="--i:2">Express</span>
-                <span class="pill" style="--i:3">Next.js</span>
-                <span class="pill" style="--i:4">Tailwind</span>
-              </div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-green)"><i data-lucide="blocks"></i></div><h3 data-i18n="skills.frameworks">Frameworks</h3></div>
+              <div class="skill-pills"><span class="pill" style="--i:0">React</span><span class="pill" style="--i:1">Node.js</span><span class="pill" style="--i:2">Express</span><span class="pill" style="--i:3">Next.js</span><span class="pill" style="--i:4">Tailwind</span></div>
               <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">React</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:92%;--c:#34d399"></div></div><span class="s-bar-pct">92%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Node.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:88%;--c:#6ee7b7"></div></div><span class="s-bar-pct">88%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Next.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:75%;--c:#a7f3d0"></div></div><span class="s-bar-pct">75%</span></div>
+                <div class="s-bar"><span class="s-bar-label">React</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:92%;--c:var(--neon-green)"></div></div><span class="s-bar-pct">92%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Node.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:88%;--c:var(--neon-cyan)"></div></div><span class="s-bar-pct">88%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Next.js</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:75%;--c:var(--neon-purple)"></div></div><span class="s-bar-pct">75%</span></div>
               </div>
             </div>
-
             <div class="skill-card glass-card scroll-reveal" style="--d:.3s">
               <div class="skill-card-glow"></div>
-              <div class="skill-header">
-                <div class="skill-icon-wrap" style="--c:#fbbf24"><i data-lucide="settings"></i></div>
-                <h3 data-i18n="skills.tools">Tools &amp; DevOps</h3>
-              </div>
-              <div class="skill-pills">
-                <span class="pill" style="--i:0">Git</span>
-                <span class="pill" style="--i:1">Docker</span>
-                <span class="pill" style="--i:2">AWS</span>
-                <span class="pill" style="--i:3">MongoDB</span>
-                <span class="pill" style="--i:4">PostgreSQL</span>
-                <span class="pill" style="--i:5">CI/CD</span>
-              </div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-orange)"><i data-lucide="settings"></i></div><h3 data-i18n="skills.tools">Tools &amp; DevOps</h3></div>
+              <div class="skill-pills"><span class="pill" style="--i:0">Git</span><span class="pill" style="--i:1">Docker</span><span class="pill" style="--i:2">AWS</span><span class="pill" style="--i:3">MongoDB</span><span class="pill" style="--i:4">PostgreSQL</span><span class="pill" style="--i:5">CI/CD</span></div>
               <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">Git</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:93%;--c:#fbbf24"></div></div><span class="s-bar-pct">93%</span></div>
-                <div class="s-bar"><span class="s-bar-label">MongoDB</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:#fcd34d"></div></div><span class="s-bar-pct">85%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Docker</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:72%;--c:#fde68a"></div></div><span class="s-bar-pct">72%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Git</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:93%;--c:var(--neon-orange)"></div></div><span class="s-bar-pct">93%</span></div>
+                <div class="s-bar"><span class="s-bar-label">MongoDB</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:85%;--c:var(--neon-green)"></div></div><span class="s-bar-pct">85%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Docker</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:72%;--c:var(--neon-cyan)"></div></div><span class="s-bar-pct">72%</span></div>
               </div>
             </div>
-
             <div class="skill-card glass-card scroll-reveal" style="--d:.4s">
               <div class="skill-card-glow"></div>
-              <div class="skill-header">
-                <div class="skill-icon-wrap" style="--c:#f472b6"><i data-lucide="palette"></i></div>
-                <h3 data-i18n="skills.design">Design &amp; Software</h3>
-              </div>
-              <div class="skill-pills">
-                <span class="pill" style="--i:0">VS Code</span>
-                <span class="pill" style="--i:1">Figma</span>
-                <span class="pill" style="--i:2">Photoshop</span>
-                <span class="pill" style="--i:3">Linux</span>
-                <span class="pill" style="--i:4">Postman</span>
-              </div>
+              <div class="skill-header"><div class="skill-icon-wrap" style="--c:var(--neon-pink)"><i data-lucide="palette"></i></div><h3 data-i18n="skills.design">Design &amp; Software</h3></div>
+              <div class="skill-pills"><span class="pill" style="--i:0">VS Code</span><span class="pill" style="--i:1">Figma</span><span class="pill" style="--i:2">Photoshop</span><span class="pill" style="--i:3">Linux</span><span class="pill" style="--i:4">Postman</span></div>
               <div class="skill-bars-wrap">
-                <div class="s-bar"><span class="s-bar-label">VS Code</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:96%;--c:#f472b6"></div></div><span class="s-bar-pct">96%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Figma</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:78%;--c:#f9a8d4"></div></div><span class="s-bar-pct">78%</span></div>
-                <div class="s-bar"><span class="s-bar-label">Linux</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:82%;--c:#fbcfe8"></div></div><span class="s-bar-pct">82%</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== EDUCATION ==================== -->
-      <section id="education" class="page">
-        <div class="page-inner">
-          <div class="section-tag scroll-reveal"><span>//</span> <span data-i18n="edu.tag">learning path</span></div>
-          <h2 class="section-heading scroll-reveal" data-i18n="edu.heading">My <span class="gradient-text">Education</span></h2>
-          <div class="timeline">
-            <div class="tl-line"></div>
-            <div class="tl-item scroll-reveal" style="--d:.1s">
-              <div class="tl-dot"><i data-lucide="graduation-cap"></i></div>
-              <div class="tl-card glass-card">
-                <div class="tl-top">
-                  <h3 data-i18n="edu.t1">Higher Institute of Technological Studies</h3>
-                  <span class="tl-badge">2020 — 2023</span>
-                </div>
-                <h4 class="tl-sub" data-i18n="edu.s1">License in Computer Science</h4>
-                <p data-i18n="edu.d1">Specialized in software engineering, web development, and database management. Built full-stack projects and participated in hackathons.</p>
-              </div>
-            </div>
-            <div class="tl-item scroll-reveal" style="--d:.2s">
-              <div class="tl-dot"><i data-lucide="book-open"></i></div>
-              <div class="tl-card glass-card">
-                <div class="tl-top">
-                  <h3 data-i18n="edu.t2">High School — Baccalaureate</h3>
-                  <span class="tl-badge">2017 — 2020</span>
-                </div>
-                <h4 class="tl-sub" data-i18n="edu.s2">Technical Sciences</h4>
-                <p data-i18n="edu.d2">Graduated with honors. Focused on mathematics, physics, and computer science. First introduction to programming.</p>
-              </div>
-            </div>
-            <div class="tl-item scroll-reveal" style="--d:.3s">
-              <div class="tl-dot"><i data-lucide="award"></i></div>
-              <div class="tl-card glass-card">
-                <div class="tl-top">
-                  <h3 data-i18n="edu.t3">Online Certifications</h3>
-                  <span class="tl-badge">2021 — Present</span>
-                </div>
-                <h4 class="tl-sub" data-i18n="edu.s3">Continuous Learning</h4>
-                <p data-i18n="edu.d3">React, Node.js, AWS Cloud Practitioner, and advanced JavaScript — Udemy, Coursera, freeCodeCamp.</p>
+                <div class="s-bar"><span class="s-bar-label">VS Code</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:96%;--c:var(--neon-pink)"></div></div><span class="s-bar-pct">96%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Figma</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:78%;--c:var(--neon-purple)"></div></div><span class="s-bar-pct">78%</span></div>
+                <div class="s-bar"><span class="s-bar-label">Linux</span><div class="s-bar-track"><div class="s-bar-fill" style="--w:82%;--c:var(--neon-orange)"></div></div><span class="s-bar-pct">82%</span></div>
               </div>
             </div>
           </div>
@@ -451,37 +415,36 @@
             <div class="tl-item scroll-reveal" style="--d:.1s">
               <div class="tl-dot"><i data-lucide="briefcase"></i></div>
               <div class="tl-card glass-card">
-                <div class="tl-top">
-                  <h3 data-i18n="exp.t1">Full Stack Developer</h3>
-                  <span class="tl-badge tl-job" data-i18n="exp.job">Job</span>
-                </div>
+                <div class="tl-top"><h3 data-i18n="exp.t1">Full Stack Developer</h3><span class="tl-badge tl-job" data-i18n="exp.job">Job</span></div>
                 <h4 class="tl-sub">Tech Solutions Company — <span class="muted">2023 — Present</span></h4>
-                <p data-i18n="exp.d1">Building and maintaining full-stack web applications with React, Node.js, and MongoDB. Leading frontend architecture and CI/CD pipelines.</p>
+                <p data-i18n="exp.d1">Building and maintaining full-stack web applications with React, Node.js, and MongoDB.</p>
                 <div class="tl-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Docker</span></div>
               </div>
             </div>
             <div class="tl-item scroll-reveal" style="--d:.2s">
               <div class="tl-dot"><i data-lucide="target"></i></div>
               <div class="tl-card glass-card">
-                <div class="tl-top">
-                  <h3 data-i18n="exp.t2">Web Development Intern</h3>
-                  <span class="tl-badge tl-intern" data-i18n="exp.intern">Internship</span>
-                </div>
+                <div class="tl-top"><h3 data-i18n="exp.t2">Web Development Intern</h3><span class="tl-badge tl-intern" data-i18n="exp.intern">Internship</span></div>
                 <h4 class="tl-sub">Digital Agency — <span class="muted">2022 — 2023</span></h4>
-                <p data-i18n="exp.d2">Built responsive websites for clients. Hands-on with modern frameworks, RESTful APIs, and agile methodology.</p>
+                <p data-i18n="exp.d2">Built responsive websites for clients. Hands-on with modern frameworks and agile methodology.</p>
                 <div class="tl-tags"><span>JavaScript</span><span>Express</span><span>PostgreSQL</span><span>Git</span></div>
               </div>
             </div>
             <div class="tl-item scroll-reveal" style="--d:.3s">
+              <div class="tl-dot"><i data-lucide="graduation-cap"></i></div>
+              <div class="tl-card glass-card">
+                <div class="tl-top"><h3 data-i18n="edu.t1">Higher Institute of Technological Studies</h3><span class="tl-badge">2020 — 2023</span></div>
+                <h4 class="tl-sub" data-i18n="edu.s1">License in Computer Science</h4>
+                <p data-i18n="edu.d1">Specialized in software engineering, web development, and database management.</p>
+              </div>
+            </div>
+            <div class="tl-item scroll-reveal" style="--d:.4s">
               <div class="tl-dot"><i data-lucide="users"></i></div>
               <div class="tl-card glass-card">
-                <div class="tl-top">
-                  <h3 data-i18n="exp.t3">IT Club Lead</h3>
-                  <span class="tl-badge tl-assoc" data-i18n="exp.assoc">Association</span>
-                </div>
+                <div class="tl-top"><h3 data-i18n="exp.t3">IT Club Lead</h3><span class="tl-badge tl-assoc" data-i18n="exp.assoc">Association</span></div>
                 <h4 class="tl-sub">University Dev Club — <span class="muted">2020 — 2023</span></h4>
-                <p data-i18n="exp.d3">Organized coding workshops, hackathons, and tech talks. Mentored junior students in web development.</p>
-                <div class="tl-tags"><span>Leadership</span><span>Mentoring</span><span>Events</span><span>Open Source</span></div>
+                <p data-i18n="exp.d3">Organized coding workshops, hackathons, and tech talks.</p>
+                <div class="tl-tags"><span>Leadership</span><span>Mentoring</span><span>Events</span></div>
               </div>
             </div>
           </div>
@@ -495,86 +458,8 @@
           <h2 class="section-heading scroll-reveal" data-i18n="proj.heading">My <span class="gradient-text">Projects</span></h2>
           <p class="section-sub scroll-reveal" data-i18n="proj.sub">A curated showcase of projects that define my craft.</p>
           <div class="projects-grid">
-            <article class="proj-card scroll-reveal" style="--d:.1s">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#1d4ed8,#3b82f6)">
-                <i data-lucide="globe" class="proj-icon"></i>
-                <div class="proj-links">
-                  <a href="https://github.com/chraietrayen/portfilio" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                  <a href="#" class="proj-link-btn accent"><i data-lucide="external-link"></i> Live</a>
-                </div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p1t">Portfolio Website</h3>
-                <p data-i18n="proj.p1d">Modern animated portfolio with VS Code-inspired design, particles, glassmorphism, and silky-smooth animations.</p>
-                <div class="proj-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div>
-              </div>
-            </article>
-            <article class="proj-card scroll-reveal" style="--d:.2s">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#34d399,#3b82f6)">
-                <i data-lucide="shopping-cart" class="proj-icon"></i>
-                <div class="proj-links">
-                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                </div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p2t">E-Commerce Platform</h3>
-                <p data-i18n="proj.p2d">Full-featured online store with cart, checkout, auth, admin dashboard, and real-time inventory.</p>
-                <div class="proj-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
-              </div>
-            </article>
-            <article class="proj-card scroll-reveal" style="--d:.3s">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#0284c7,#38bdf8)">
-                <i data-lucide="message-circle" class="proj-icon"></i>
-                <div class="proj-links">
-                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                </div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p3t">Real-Time Chat App</h3>
-                <p data-i18n="proj.p3d">WebSocket messaging with rooms, file sharing, typing indicators, and end-to-end encryption.</p>
-                <div class="proj-tech"><span>Socket.io</span><span>Express</span><span>React</span><span>Redis</span></div>
-              </div>
-            </article>
-            <article class="proj-card scroll-reveal" style="--d:.4s">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#fbbf24,#f87171)">
-                <i data-lucide="kanban" class="proj-icon"></i>
-                <div class="proj-links">
-                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                </div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p4t">Task Management</h3>
-                <p data-i18n="proj.p4d">Kanban board with drag-and-drop, team collaboration, progress tracking, and analytics.</p>
-                <div class="proj-tech"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div>
-              </div>
-            </article>
-            <article class="proj-card scroll-reveal" style="--d:.5s">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#60a5fa,#34d399)">
-                <i data-lucide="bot" class="proj-icon"></i>
-                <div class="proj-links">
-                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                </div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p5t">AI Content Generator</h3>
-                <p data-i18n="proj.p5d">AI-powered creation tool using OpenAI APIs for blog posts, social media, and marketing copy.</p>
-                <div class="proj-tech"><span>Python</span><span>FastAPI</span><span>OpenAI</span><span>React</span></div>
-              </div>
-            </article>
-            <article class="proj-card scroll-reveal" style="--d:.6s">
-              <div class="proj-visual" style="--g:linear-gradient(135deg,#2563eb,#60a5fa)">
-                <i data-lucide="cloud-sun" class="proj-icon"></i>
-                <div class="proj-links">
-                  <a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
-                </div>
-              </div>
-              <div class="proj-body">
-                <h3 data-i18n="proj.p6t">Weather &amp; News PWA</h3>
-                <p data-i18n="proj.p6d">Progressive Web App with real-time weather, curated news, offline support, and push notifications.</p>
-                <div class="proj-tech"><span>PWA</span><span>JavaScript</span><span>APIs</span><span>SW</span></div>
-              </div>
-            </article>
-            <article class="proj-card featured scroll-reveal" style="--d:.7s">
+            <!-- FEATURED: SantecAI -->
+            <article class="proj-card featured scroll-reveal" style="--d:.1s;--accent-c:var(--neon-green)">
               <div class="proj-visual" style="--g:linear-gradient(135deg,#10b981,#06b6d4)">
                 <i data-lucide="heart-pulse" class="proj-icon"></i>
                 <div class="proj-links">
@@ -586,6 +471,64 @@
                 <h3 data-i18n="proj.p7t">SantecAI — Health Platform</h3>
                 <p data-i18n="proj.p7d">AI-powered healthcare platform with intelligent diagnostics, patient management, and secure authentication.</p>
                 <div class="proj-tech"><span>React</span><span>AI/ML</span><span>Node.js</span><span>TailwindCSS</span><span>Vercel</span></div>
+              </div>
+            </article>
+            <article class="proj-card scroll-reveal" style="--d:.2s;--accent-c:var(--neon-cyan)">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#ff2d78,#b24dff)">
+                <i data-lucide="globe" class="proj-icon"></i>
+                <div class="proj-links">
+                  <a href="https://github.com/chraietrayen/portfilio" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a>
+                  <a href="#" class="proj-link-btn accent"><i data-lucide="external-link"></i> Live</a>
+                </div>
+              </div>
+              <div class="proj-body">
+                <h3 data-i18n="proj.p1t">Portfolio Website</h3>
+                <p data-i18n="proj.p1d">Modern animated portfolio with cinematic design, particles, glassmorphism, and silky-smooth animations.</p>
+                <div class="proj-tech"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div>
+              </div>
+            </article>
+            <article class="proj-card scroll-reveal" style="--d:.3s;--accent-c:var(--neon-green)">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#00f0ff,#b24dff)">
+                <i data-lucide="shopping-cart" class="proj-icon"></i>
+                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
+              </div>
+              <div class="proj-body">
+                <h3 data-i18n="proj.p2t">E-Commerce Platform</h3>
+                <p data-i18n="proj.p2d">Full-featured online store with cart, checkout, auth, admin dashboard, and real-time inventory.</p>
+                <div class="proj-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
+              </div>
+            </article>
+            <article class="proj-card scroll-reveal" style="--d:.4s;--accent-c:var(--neon-purple)">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#ff6b35,#ff2d78)">
+                <i data-lucide="message-circle" class="proj-icon"></i>
+                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
+              </div>
+              <div class="proj-body">
+                <h3 data-i18n="proj.p3t">Real-Time Chat App</h3>
+                <p data-i18n="proj.p3d">WebSocket messaging with rooms, file sharing, typing indicators, and end-to-end encryption.</p>
+                <div class="proj-tech"><span>Socket.io</span><span>Express</span><span>React</span><span>Redis</span></div>
+              </div>
+            </article>
+            <article class="proj-card scroll-reveal" style="--d:.5s;--accent-c:var(--neon-orange)">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#b24dff,#00f0ff)">
+                <i data-lucide="kanban" class="proj-icon"></i>
+                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
+              </div>
+              <div class="proj-body">
+                <h3 data-i18n="proj.p4t">Task Management</h3>
+                <p data-i18n="proj.p4d">Kanban board with drag-and-drop, team collaboration, progress tracking, and analytics.</p>
+                <div class="proj-tech"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span></div>
+              </div>
+            </article>
+            <article class="proj-card scroll-reveal" style="--d:.6s;--accent-c:var(--neon-pink)">
+              <div class="proj-visual" style="--g:linear-gradient(135deg,#00f0ff,#00ff88)">
+                <i data-lucide="bot" class="proj-icon"></i>
+                <div class="proj-links"><a href="https://github.com/chraietrayen" target="_blank" class="proj-link-btn"><i data-lucide="github"></i> GitHub</a></div>
+              </div>
+              <div class="proj-body">
+                <h3 data-i18n="proj.p5t">AI Content Generator</h3>
+                <p data-i18n="proj.p5d">AI-powered creation tool using OpenAI APIs for blog posts, social media, and marketing copy.</p>
+                <div class="proj-tech"><span>Python</span><span>FastAPI</span><span>OpenAI</span><span>React</span></div>
               </div>
             </article>
           </div>
@@ -601,36 +544,16 @@
             <div class="contact-left scroll-reveal" style="--d:.1s">
               <h3 class="contact-cta-text" data-i18n="contact.cta">Have a project in mind?<br/><span class="gradient-text">Let's build it together.</span></h3>
               <div class="contact-links">
-                <a href="mailto:rayenchraiet2000@gmail.com" class="c-link glass-card">
-                  <i data-lucide="mail" class="c-link-icon"></i>
-                  <div><strong>Email</strong><span>rayenchraiet2000@gmail.com</span></div>
-                </a>
-                <a href="tel:+21694599198" class="c-link glass-card">
-                  <i data-lucide="phone" class="c-link-icon"></i>
-                  <div><strong data-i18n="about.phone_l">Phone</strong><span>+216 94 599 198</span></div>
-                </a>
-                <a href="https://github.com/chraietrayen" target="_blank" class="c-link glass-card">
-                  <i data-lucide="github" class="c-link-icon"></i>
-                  <div><strong>GitHub</strong><span>chraietrayen</span></div>
-                </a>
+                <a href="mailto:rayenchraiet2000@gmail.com" class="c-link glass-card"><i data-lucide="mail" class="c-link-icon"></i><div><strong>Email</strong><span>rayenchraiet2000@gmail.com</span></div></a>
+                <a href="tel:+21694599198" class="c-link glass-card"><i data-lucide="phone" class="c-link-icon"></i><div><strong data-i18n="about.phone_l">Phone</strong><span>+216 94 599 198</span></div></a>
+                <a href="https://github.com/chraietrayen" target="_blank" class="c-link glass-card"><i data-lucide="github" class="c-link-icon"></i><div><strong>GitHub</strong><span>chraietrayen</span></div></a>
               </div>
-              <!-- QR CODES -->
               <div class="qr-section scroll-reveal" style="--d:.2s">
                 <div class="qr-card glass-card">
-                  <div class="qr-header">
-                    <i data-lucide="scan-line" class="qr-header-icon"></i>
-                    <h4 data-i18n="contact.qr_title">Scan to Connect</h4>
-                  </div>
+                  <div class="qr-header"><i data-lucide="scan-line" class="qr-header-icon"></i><h4 data-i18n="contact.qr_title">Scan to Connect</h4></div>
                   <div class="qr-codes">
-                    <div class="qr-item">
-                      <div id="qr-portfolio" class="qr-code"></div>
-                      <span class="qr-label" data-i18n="contact.qr_visit">Visit Portfolio</span>
-                    </div>
-                    <div class="qr-item">
-                      <div id="qr-vcard" class="qr-code"></div>
-                      <span class="qr-label" data-i18n="contact.qr_save">Save Contact</span>
-                      <span class="qr-sublabel" data-i18n="contact.qr_vcard">vCard</span>
-                    </div>
+                    <div class="qr-item"><div id="qr-portfolio" class="qr-code"></div><span class="qr-label" data-i18n="contact.qr_visit">Visit Portfolio</span></div>
+                    <div class="qr-item"><div id="qr-vcard" class="qr-code"></div><span class="qr-label" data-i18n="contact.qr_save">Save Contact</span><span class="qr-sublabel" data-i18n="contact.qr_vcard">vCard</span></div>
                   </div>
                 </div>
               </div>
@@ -639,32 +562,12 @@
               <form id="contact-form" class="contact-form glass-card">
                 <h3 data-i18n="contact.form_title">Send a Message</h3>
                 <div class="form-duo">
-                  <div class="field">
-                    <input type="text" name="name" id="c-name" required placeholder=" "/>
-                    <label for="c-name" data-i18n="contact.name">Your Name</label>
-                    <div class="field-line"></div>
-                  </div>
-                  <div class="field">
-                    <input type="email" name="email" id="c-email" required placeholder=" "/>
-                    <label for="c-email">Email</label>
-                    <div class="field-line"></div>
-                  </div>
+                  <div class="field"><input type="text" name="name" id="c-name" required placeholder=" "/><label for="c-name" data-i18n="contact.name">Your Name</label><div class="field-line"></div></div>
+                  <div class="field"><input type="email" name="email" id="c-email" required placeholder=" "/><label for="c-email">Email</label><div class="field-line"></div></div>
                 </div>
-                <div class="field">
-                  <input type="text" name="subject" id="c-subject" required placeholder=" "/>
-                  <label for="c-subject" data-i18n="contact.subject">Subject</label>
-                  <div class="field-line"></div>
-                </div>
-                <div class="field">
-                  <textarea name="message" id="c-message" rows="5" required placeholder=" "></textarea>
-                  <label for="c-message" data-i18n="contact.message">Message</label>
-                  <div class="field-line"></div>
-                </div>
-                <button type="submit" class="submit-btn magnetic">
-                  <span class="submit-bg"></span>
-                  <span class="submit-text" data-i18n="contact.send">Send Message</span>
-                  <i data-lucide="send"></i>
-                </button>
+                <div class="field"><input type="text" name="subject" id="c-subject" required placeholder=" "/><label for="c-subject" data-i18n="contact.subject">Subject</label><div class="field-line"></div></div>
+                <div class="field"><textarea name="message" id="c-message" rows="5" required placeholder=" "></textarea><label for="c-message" data-i18n="contact.message">Message</label><div class="field-line"></div></div>
+                <button type="submit" class="submit-btn magnetic"><span class="submit-bg"></span><span class="submit-text" data-i18n="contact.send">Send Message</span><i data-lucide="send"></i></button>
                 <div id="form-status" class="form-status-msg"></div>
               </form>
             </div>
@@ -691,4 +594,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="js/script.js"></script>
 </body>
-</html> 
+</html>
