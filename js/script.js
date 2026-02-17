@@ -39,7 +39,10 @@ const TRANSLATIONS = {
     'contact.cta':'Have a project in mind?<br/><span class="gradient-text">Let\'s build it together.</span>',
     'contact.form_title':'Send a Message','contact.name':'Your Name','contact.subject':'Subject','contact.message':'Message','contact.send':'Send Message',
     'footer.text':'Crafted with passion.',
-    'contact.qr_title':'Scan to Connect','contact.qr_visit':'Visit Portfolio','contact.qr_save':'Save Contact','contact.qr_vcard':'vCard'
+    'contact.qr_title':'Scan to Connect','contact.qr_visit':'Visit Portfolio','contact.qr_save':'Save Contact','contact.qr_vcard':'vCard',
+    'about.languages':'Languages','lang.arabic':'Arabic','lang.french':'French','lang.english':'English','lang.german':'German',
+    'lang.native':'Native','lang.fluent':'Fluent','lang.advanced':'Advanced','lang.basic':'Basic',
+    'proj.p7t':'SantecAI — Health Platform','proj.p7d':'AI-powered healthcare platform with intelligent diagnostics, patient management, and secure authentication.'
   },
   fr: {
     'nav.home':'Accueil','nav.about':'À propos','nav.skills':'Compétences','nav.education':'Éducation',
@@ -73,7 +76,10 @@ const TRANSLATIONS = {
     'contact.cta':'Un projet en tête ?<br/><span class="gradient-text">Construisons-le ensemble.</span>',
     'contact.form_title':'Envoyer un message','contact.name':'Votre nom','contact.subject':'Sujet','contact.message':'Message','contact.send':'Envoyer',
     'footer.text':'Créé avec passion.',
-    'contact.qr_title':'Scanner pour se connecter','contact.qr_visit':'Visiter le portfolio','contact.qr_save':'Enregistrer le contact','contact.qr_vcard':'vCard'
+    'contact.qr_title':'Scanner pour se connecter','contact.qr_visit':'Visiter le portfolio','contact.qr_save':'Enregistrer le contact','contact.qr_vcard':'vCard',
+    'about.languages':'Langues','lang.arabic':'Arabe','lang.french':'Français','lang.english':'Anglais','lang.german':'Allemand',
+    'lang.native':'Natif','lang.fluent':'Courant','lang.advanced':'Avancé','lang.basic':'Basique',
+    'proj.p7t':'SantecAI — Plateforme Santé','proj.p7d':'Plateforme de santé propulsée par l\'IA avec diagnostics intelligents, gestion des patients et authentification sécurisée.'
   },
   de: {
     'nav.home':'Startseite','nav.about':'Über mich','nav.skills':'Fähigkeiten','nav.education':'Bildung',
@@ -107,7 +113,10 @@ const TRANSLATIONS = {
     'contact.cta':'Ein Projekt im Sinn?<br/><span class="gradient-text">Lass es uns gemeinsam bauen.</span>',
     'contact.form_title':'Nachricht senden','contact.name':'Ihr Name','contact.subject':'Betreff','contact.message':'Nachricht','contact.send':'Senden',
     'footer.text':'Mit Leidenschaft erstellt.',
-    'contact.qr_title':'Scannen zum Verbinden','contact.qr_visit':'Portfolio besuchen','contact.qr_save':'Kontakt speichern','contact.qr_vcard':'vCard'
+    'contact.qr_title':'Scannen zum Verbinden','contact.qr_visit':'Portfolio besuchen','contact.qr_save':'Kontakt speichern','contact.qr_vcard':'vCard',
+    'about.languages':'Sprachen','lang.arabic':'Arabisch','lang.french':'Französisch','lang.english':'Englisch','lang.german':'Deutsch',
+    'lang.native':'Muttersprache','lang.fluent':'Fließend','lang.advanced':'Fortgeschritten','lang.basic':'Grundkenntnisse',
+    'proj.p7t':'SantecAI — Gesundheitsplattform','proj.p7d':'KI-gestützte Gesundheitsplattform mit intelligenter Diagnostik, Patientenverwaltung und sicherer Authentifizierung.'
   },
   ar: {
     'nav.home':'الرئيسية','nav.about':'عني','nav.skills':'المهارات','nav.education':'التعليم',
@@ -141,7 +150,10 @@ const TRANSLATIONS = {
     'contact.cta':'لديك مشروع في ذهنك؟<br/><span class="gradient-text">لنبنيه معًا.</span>',
     'contact.form_title':'أرسل رسالة','contact.name':'اسمك','contact.subject':'الموضوع','contact.message':'الرسالة','contact.send':'إرسال',
     'footer.text':'صُنع بشغف.',
-    'contact.qr_title':'امسح للتواصل','contact.qr_visit':'زيارة البورتفوليو','contact.qr_save':'حفظ جهة الاتصال','contact.qr_vcard':'بطاقة اتصال'
+    'contact.qr_title':'امسح للتواصل','contact.qr_visit':'زيارة البورتفوليو','contact.qr_save':'حفظ جهة الاتصال','contact.qr_vcard':'بطاقة اتصال',
+    'about.languages':'اللغات','lang.arabic':'العربية','lang.french':'الفرنسية','lang.english':'الإنجليزية','lang.german':'الألمانية',
+    'lang.native':'لغة أم','lang.fluent':'طلاقة','lang.advanced':'متقدم','lang.basic':'أساسي',
+    'proj.p7t':'SantecAI — منصة صحية','proj.p7d':'منصة صحية مدعومة بالذكاء الاصطناعي مع تشخيصات ذكية وإدارة المرضى ومصادقة آمنة.'
   }
 };
 

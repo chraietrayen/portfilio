@@ -425,6 +425,18 @@ img{max-width:100%;display:block}
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.2);transform:scale(0);animation:ripple-anim .7s ease-out forwards;pointer-events:none}
 @keyframes ripple-anim{to{transform:scale(4);opacity:0}}
 
+/* ═══════════════════ LANGUAGE BARS ═══════════════════ */
+.lang-bars{display:flex;flex-direction:column;gap:.85rem}
+.lang-bar-item{display:flex;flex-direction:column;gap:.35rem}
+.lang-bar-top{display:flex;align-items:center;gap:.5rem;font-size:.82rem}
+.lang-bar-flag{font-size:1.1rem;line-height:1}
+.lang-bar-name{font-weight:600;color:var(--heading);flex:1;transition:color .5s}
+.lang-bar-level{font-size:.7rem;font-weight:600;color:var(--accent);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+.lang-bar-track{height:6px;background:var(--surface);border-radius:3px;overflow:hidden;position:relative}
+.lang-bar-fill{height:100%;width:0;border-radius:3px;background:var(--c);position:relative;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.lang-bar-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:bar-shimmer 2s ease-in-out infinite}
+.scroll-reveal.visible .lang-bar-fill{width:var(--w)}
+
 /* ═══════════════════ QR CODE ═══════════════════ */
 .qr-section{margin-top:2rem}
 .qr-card{text-align:center}
