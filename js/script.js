@@ -290,6 +290,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initMusicPlayer();
   initRipple();
   initFPS();
+  initParallaxElements();
+  initTextSplitAnimation();
+  initTypingEffect();
+  initSmoothHoverCards();
+  initTechLogoCards();
+  initStatCounters();
   // Lucide icons
   if (window.lucide) window.lucide.createIcons();
 });
@@ -394,6 +400,9 @@ function initNavigation() {
       // Re-trigger animations
       triggerRadialMeters();
       triggerLangBars();
+      // Notify Three.js scene of section change
+      window.dispatchEvent(new CustomEvent('sectionChange', { detail: { section: sectionId } }));
+      if (window.threeScene) window.threeScene.setSection(sectionId);
     }
     if (link) link.classList.add('active');
     // Close mobile menu
@@ -838,4 +847,162 @@ function initFPS() {
     requestAnimationFrame(count);
   }
   requestAnimationFrame(count);
+}
+
+// ==================== PARALLAX ELEMENTS ====================
+function initParallaxElements() {
+  const scroll = document.getElementById('main-scroll');
+  if (!scroll) return;
+
+  scroll.addEventListener('scroll', () => {
+    const scrollY = scroll.scrollTop;
+    const parallaxEls = document.querySelectorAll('.page.active .hero-visual, .page.active .hero-content');
+    parallaxEls.forEach(el => {
+      const speed = el.classList.contains('hero-visual') ? 0.15 : 0.05;
+      el.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+
+    // Parallax aurora blobs
+    document.querySelectorAll('.aurora-blob').forEach((blob, i) => {
+      const speed = 0.02 + i * 0.01;
+      blob.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  });
+}
+
+// ==================== TEXT SPLIT ANIMATION ====================
+function initTextSplitAnimation() {
+  // Animate section headings letter-by-letter on reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        const text = entry.target.textContent;
+        const html = entry.target.innerHTML;
+        // Only apply to pure text nodes (skip those with nested HTML)
+        if (entry.target.children.length === 0) {
+          entry.target.innerHTML = text.split('').map((char, i) =>
+            char === ' ' ? ' ' : `<span style="animation-delay:${i * 0.03}s" class="letter-pop">${char}</span>`
+          ).join('');
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Observe section tags
+  document.querySelectorAll('.section-tag span:last-child').forEach(el => observer.observe(el));
+}
+
+// ==================== TYPING EFFECT ====================
+function initTypingEffect() {
+  const el = document.getElementById('hero-typed') || document.querySelector('.hero-subtitle');
+  if (!el) return;
+
+  const phrases = [
+    'Full Stack Developer',
+    'UI/UX Engineer',
+    'React Developer',
+    'Problem Solver',
+    'Creative Coder',
+  ];
+
+  let phraseIdx = 0;
+  let charIdx = 0;
+  let deleting = false;
+  const typeSpeed = 65;
+  const deleteSpeed = 35;
+  const pauseAfterType = 2500;
+  const pauseAfterDelete = 500;
+
+  function typeCycle() {
+    const current = phrases[phraseIdx];
+    if (!deleting) {
+      el.textContent = current.substring(0, charIdx + 1);
+      charIdx++;
+      if (charIdx >= current.length) {
+        deleting = true;
+        setTimeout(typeCycle, pauseAfterType);
+        return;
+      }
+      setTimeout(typeCycle, typeSpeed);
+    } else {
+      el.textContent = current.substring(0, charIdx - 1);
+      charIdx--;
+      if (charIdx <= 0) {
+        deleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        setTimeout(typeCycle, pauseAfterDelete);
+        return;
+      }
+      setTimeout(typeCycle, deleteSpeed);
+    }
+  }
+
+  // Wait for preloader then start
+  setTimeout(typeCycle, 3000);
+}
+
+// ==================== TECH LOGO CARD ANIMATIONS ====================
+function initTechLogoCards() {
+  const cards = document.querySelectorAll('.tech-logo-card');
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+}
+
+// ==================== STAT COUNTER (for new hero stats bar) ====================
+function initStatCounters() {
+  const counters = document.querySelectorAll('.stat-number[data-count]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        let current = 0;
+        const increment = Math.ceil(target / 40);
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = current + '+';
+        }, 30);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
+}
+
+// ==================== SMOOTH HOVER CARDS ====================
+function initSmoothHoverCards() {
+  const cards = document.querySelectorAll('.project-card, .education-card, .timeline-card, .glass-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
+      card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-6px) scale(1.012)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = '';
+    });
+  });
 }
