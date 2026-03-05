@@ -293,6 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallaxElements();
   initTextSplitAnimation();
   initTypingEffect();
+  initHeroCanvas();
+  initHeroVisualTilt();
   initSmoothHoverCards();
   initTechLogoCards();
   initStatCounters();
@@ -856,9 +858,9 @@ function initParallaxElements() {
 
   scroll.addEventListener('scroll', () => {
     const scrollY = scroll.scrollTop;
-    const parallaxEls = document.querySelectorAll('.page.active .hero-visual, .page.active .hero-content');
+    const parallaxEls = document.querySelectorAll('.page.active .hero-visual-premium, .page.active .hero-content');
     parallaxEls.forEach(el => {
-      const speed = el.classList.contains('hero-visual') ? 0.15 : 0.05;
+      const speed = el.classList.contains('hero-visual-premium') ? 0.15 : 0.05;
       el.style.transform = `translateY(${scrollY * speed}px)`;
     });
 
@@ -940,6 +942,140 @@ function initTypingEffect() {
 
   // Wait for preloader then start
   setTimeout(typeCycle, 3000);
+}
+
+// ==================== HERO GEOMETRIC CANVAS ====================
+function initHeroCanvas() {
+  const canvas = document.getElementById('hero-geo-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  let particles = [];
+  let mouse = { x: -1000, y: -1000 };
+  let raf;
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = Math.min(60, Math.floor((w * h) / 8000));
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 1,
+        color: ['rgba(255,45,120,', 'rgba(178,77,255,', 'rgba(0,240,255,'][Math.floor(Math.random() * 3)]
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    // Draw connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          const alpha = (1 - dist / 120) * 0.15;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(178,77,255,${alpha})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw & update particles
+    particles.forEach(p => {
+      // Mouse interaction
+      const dx = mouse.x - p.x;
+      const dy = mouse.y - p.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 150) {
+        const force = (150 - dist) / 150;
+        p.vx -= (dx / dist) * force * 0.15;
+        p.vy -= (dy / dist) * force * 0.15;
+      }
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // Damping
+      p.vx *= 0.99;
+      p.vy *= 0.99;
+
+      // Bounce
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      p.x = Math.max(0, Math.min(w, p.x));
+      p.y = Math.max(0, Math.min(h, p.y));
+
+      // Glow dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + '0.6)';
+      ctx.fill();
+
+      // Subtle glow
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + '0.08)';
+      ctx.fill();
+    });
+
+    raf = requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', () => {
+    mouse.x = -1000;
+    mouse.y = -1000;
+  });
+
+  window.addEventListener('resize', () => {
+    resize();
+    createParticles();
+  });
+
+  resize();
+  createParticles();
+  draw();
+}
+
+// ==================== HERO MOUSE TILT on RIGHT SIDE ====================
+function initHeroVisualTilt() {
+  const visual = document.querySelector('.hero-visual-premium');
+  if (!visual) return;
+
+  visual.addEventListener('mousemove', e => {
+    const rect = visual.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    const rotateX = y * -12;
+    const rotateY = x * 12;
+    visual.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  visual.addEventListener('mouseleave', () => {
+    visual.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+    visual.style.transition = 'transform 0.5s ease';
+    setTimeout(() => { visual.style.transition = ''; }, 500);
+  });
 }
 
 // ==================== TECH LOGO CARD ANIMATIONS ====================

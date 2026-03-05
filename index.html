@@ -165,20 +165,34 @@
 
       <!-- ==================== HOME ==================== -->
       <section id="home" class="page active">
-        <div class="hero hero-pro">
+        <!-- Side Social Icons -->
+        <div class="hero-side-socials">
+          <a href="https://github.com/chraietrayen" target="_blank" class="side-social-link magnetic" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="https://linkedin.com" target="_blank" class="side-social-link magnetic" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:rayenchraiet2000@gmail.com" class="side-social-link magnetic" aria-label="Email"><i data-lucide="mail"></i></a>
+          <a href="tel:+21694599198" class="side-social-link magnetic" aria-label="Phone"><i data-lucide="phone"></i></a>
+          <div class="side-social-line"></div>
+        </div>
+
+        <div class="hero hero-premium">
+          <!-- LEFT SIDE -->
           <div class="hero-content">
             <div class="hero-badge anim-up">
               <span class="hero-badge-dot"></span>
               <span data-i18n="home.badge">Full Stack Developer</span>
             </div>
+
             <h1 class="hero-title anim-up d1">
-              <span class="hero-greeting">Hello, I'm</span>
-              <span class="hero-name-line"><span class="hero-name-gradient">Rayen Chraiet</span></span>
+              <span class="hero-intro">Hi, I'm</span>
+              <span class="hero-name-line">
+                <span class="hero-name-gradient">Rayen Chraiet</span>
+              </span>
               <span class="hero-role-line">
                 <span class="hero-role-text" id="hero-typed"></span><span class="typed-cursor">|</span>
               </span>
             </h1>
-            <p class="hero-desc anim-up d2" data-i18n="home.desc">I craft exceptional digital experiences. Specializing in full-stack development with a passion for clean code, stunning interfaces, and seamless user experiences.</p>
+
+            <p class="hero-subtitle-text anim-up d2" data-i18n="home.desc">I craft interactive web experiences using React, Tailwind, and modern design principles. Specializing in full-stack development with a passion for clean code and seamless user experiences.</p>
 
             <!-- HERO TECH STACK STRIP -->
             <div class="hero-tech-strip anim-up d2">
@@ -197,60 +211,54 @@
             <div class="hero-cta anim-up d3">
               <a href="#projects" class="cta-btn primary magnetic" data-nav="projects">
                 <span class="cta-bg"></span>
-                <span class="cta-text" data-i18n="home.cta1">VIEW PROJECTS</span>
+                <span class="cta-text" data-i18n="home.cta1">VIEW MY WORK</span>
                 <i data-lucide="arrow-right" class="cta-arrow"></i>
               </a>
               <a href="#contact" class="cta-btn outline magnetic" data-nav="contact">
-                <span class="cta-text" data-i18n="home.cta2">CONTACT ME</span>
+                <i data-lucide="download" class="cta-icon-left"></i>
+                <span class="cta-text" data-i18n="home.cta2">DOWNLOAD CV</span>
               </a>
-            </div>
-
-            <!-- SOCIAL LINKS -->
-            <div class="hero-socials anim-up d4">
-              <a href="https://github.com/chraietrayen" target="_blank" class="hero-social-link" aria-label="GitHub"><i data-lucide="github"></i></a>
-              <a href="mailto:rayenchraiet2000@gmail.com" class="hero-social-link" aria-label="Email"><i data-lucide="mail"></i></a>
-              <a href="tel:+21694599198" class="hero-social-link" aria-label="Phone"><i data-lucide="phone"></i></a>
             </div>
           </div>
 
-          <div class="hero-visual-pro anim-up d2">
-            <div class="hero-avatar-container">
-              <!-- Decorative rings -->
-              <div class="hero-deco-ring ring-1"></div>
-              <div class="hero-deco-ring ring-2"></div>
-              <div class="hero-deco-ring ring-3"></div>
+          <!-- RIGHT SIDE — Futuristic 3D Visual -->
+          <div class="hero-visual-premium anim-up d2">
+            <canvas id="hero-geo-canvas" class="hero-geo-canvas"></canvas>
 
-              <!-- Avatar -->
-              <div class="hero-avatar-frame">
-                <img src="public/rvn.png" alt="Rayen Chraiet" class="hero-avatar-img"/>
-                <div class="hero-avatar-glow"></div>
-              </div>
+            <!-- Neon Orbs -->
+            <div class="hero-orb orb-pink"></div>
+            <div class="hero-orb orb-purple"></div>
+            <div class="hero-orb orb-blue"></div>
 
-              <!-- Floating tech icons -->
-              <div class="floating-tech-icon fti-1" title="React">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/>
-              </div>
-              <div class="floating-tech-icon fti-2" title="Python">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>
-              </div>
-              <div class="floating-tech-icon fti-3" title="JavaScript">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>
-              </div>
-              <div class="floating-tech-icon fti-4" title="Node.js">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/>
-              </div>
-              <div class="floating-tech-icon fti-5" title="TypeScript">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/>
-              </div>
-              <div class="floating-tech-icon fti-6" title="MongoDB">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/>
-              </div>
+            <!-- Floating Geometric Shapes -->
+            <div class="hero-shape shape-ring"></div>
+            <div class="hero-shape shape-triangle"></div>
+            <div class="hero-shape shape-cube"></div>
+            <div class="hero-shape shape-dot-grid"></div>
+            <div class="hero-shape shape-cross"></div>
+            <div class="hero-shape shape-diamond"></div>
 
-              <!-- Status badge -->
-              <div class="hero-status-badge">
-                <span class="status-dot-live"></span>
-                <span>Available for work</span>
-              </div>
+            <!-- Glowing Center Sphere -->
+            <div class="hero-sphere">
+              <div class="sphere-inner"></div>
+              <div class="sphere-ring sphere-ring-1"></div>
+              <div class="sphere-ring sphere-ring-2"></div>
+              <div class="sphere-ring sphere-ring-3"></div>
+              <div class="sphere-pulse"></div>
+            </div>
+
+            <!-- Floating Code Snippets -->
+            <div class="hero-float-card float-card-1">
+              <span class="float-card-dot"></span>
+              <code>&lt;build /&gt;</code>
+            </div>
+            <div class="hero-float-card float-card-2">
+              <span class="float-card-dot green"></span>
+              <code>npm run dev</code>
+            </div>
+            <div class="hero-float-card float-card-3">
+              <span class="float-card-dot pink"></span>
+              <code>const ui = ✨</code>
             </div>
           </div>
         </div>
@@ -278,9 +286,13 @@
           </div>
         </div>
 
-        <div class="scroll-hint anim-up d5">
-          <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator anim-up d5">
+          <div class="scroll-indicator-track">
+            <div class="scroll-indicator-thumb"></div>
+          </div>
           <span data-i18n="home.scroll">Scroll to explore</span>
+          <i data-lucide="chevrons-down" class="scroll-chevrons"></i>
         </div>
       </section>
 
